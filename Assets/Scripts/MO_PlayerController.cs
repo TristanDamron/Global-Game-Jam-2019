@@ -95,4 +95,9 @@ public class MO_PlayerController : MonoBehaviour
 
         playerState = PlayerState.AIRBORNE;
     }
+
+    public void QuitYoyo()
+    {
+        playerState = PlayerState.AIRBORNE;
+    }
 }
