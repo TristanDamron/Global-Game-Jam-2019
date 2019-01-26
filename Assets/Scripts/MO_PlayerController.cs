@@ -9,12 +9,15 @@ public class MO_PlayerController : MonoBehaviour
     [SerializeField]
     private float speed_;
     [SerializeField]
+    private float jumpForce_ = 600.0f;
+    [SerializeField]
     private bool jumping_;
     [SerializeField]
     private Transform respawnLocation_;
     [SerializeField]
     private GameObject holding_;
-    private Rigidbody2D rb_;
+    [System.NonSerialized]
+    public Rigidbody2D rb_;
     private ParticleSystem particles_;
 
     private PlayerState playerState = PlayerState.isIdle;
@@ -42,7 +45,7 @@ public class MO_PlayerController : MonoBehaviour
             pos.y = transform.position.y;
 
             if (!jumping_ && Input.GetAxis("Jump") != 0f && rb_.velocity.y == 0)
-                Jump(200f);
+                Jump(jumpForce_);
 
             // Restrict the upward velocity of the player
             if (rb_.velocity.y >= 7f)
@@ -84,5 +87,10 @@ public class MO_PlayerController : MonoBehaviour
         rb_.AddForce(transform.up * thrust_);
 
         jumping_ = true;
+    }
+
+    public void QuitYoyo()
+    {
+        playerState = PlayerState.isIdle;
     }
 }

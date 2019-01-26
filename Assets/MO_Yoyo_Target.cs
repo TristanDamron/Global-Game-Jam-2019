@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class MO_Yoyo_Target : MonoBehaviour
 {
-    float lengthToTarget = 5.0f;
+    [System.NonSerialized]
+    public float lengthToTarget = 5.0f;
     // Update is called once per frame
     void Update()
     {
@@ -20,6 +21,7 @@ public class MO_Yoyo_Target : MonoBehaviour
         Debug.DrawRay(goalPosition, Vector3.up, Color.red);
         Debug.DrawRay(parentPosition, Vector3.up, Color.blue);
         Debug.DrawRay(parentPosition, goalDirection, Color.cyan);
+        Debug.DrawRay(parentPosition, goalDirection.normalized * lengthToTarget);
         transform.position = goalPosition;
     }
 }
