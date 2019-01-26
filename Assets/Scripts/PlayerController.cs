@@ -9,11 +9,11 @@ public class PlayerController : MonoBehaviour
     private float speed_;
     [SerializeField]
     private bool jumping_;
-    private Rigidbody rb_;
+    private Rigidbody2D rb_;
 
     void Start()
     {
-        rb_ = GetComponent<Rigidbody>();
+        rb_ = GetComponent<Rigidbody2D>();
     }
 
     void Update()
@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
     }
 
     public void Jump(float thrust_) {
-        rb_.AddForce(transform.up * thrust_, ForceMode.Impulse);   
+        rb_.AddForce(transform.up * thrust_);   
         jumping_ = true;
     }
 }
