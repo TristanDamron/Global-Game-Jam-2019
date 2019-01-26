@@ -20,7 +20,7 @@ public class MO_PlayerController : MonoBehaviour
     [System.NonSerialized]
     public Rigidbody2D rb_;
     private ParticleSystem particles_;
-
+    private Animator animator_;
     private PlayerState playerState = PlayerState.AIRBORNE;
 
     public enum PlayerState
@@ -35,6 +35,7 @@ public class MO_PlayerController : MonoBehaviour
     {
         rb_ = GetComponent<Rigidbody2D>();
         particles_ = GetComponent<ParticleSystem>();
+        animator_ = GetComponentInChildren<Animator>();
     }
 
     void Update()
@@ -52,6 +53,12 @@ public class MO_PlayerController : MonoBehaviour
         }
         if (playerState != PlayerState.YOYO)
         {
+            if (Input.GetAxis("Horizontal") != 0f && playerState != PlayerState.AIRBORNE) {
+                animator_.Play("Walk");
+            } else if (playerState != PlayerState.AIRBORNE) {
+                animator_.Play("Idle");
+            }
+
             var pos = new Vector3();
             pos.x = transform.position.x + Input.GetAxis("Horizontal") * Time.deltaTime * speed_;
             pos.y = transform.position.y;
@@ -112,6 +119,7 @@ public class MO_PlayerController : MonoBehaviour
     }
 
     public void Jump(float thrust_) {
+        animator_.Play("Jump");
         Vector3 velocity = rb_.velocity;
         velocity.y += thrust_;
         rb_.velocity = velocity;
