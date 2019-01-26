@@ -20,14 +20,13 @@ public class MO_PlayerController : MonoBehaviour
     public Rigidbody2D rb_;
     private ParticleSystem particles_;
 
-    private PlayerState playerState = PlayerState.isIdle;
+    private PlayerState playerState = PlayerState.AIRBORNE;
 
     public enum PlayerState
     {
-        isJumping,
-        isIdle,
-        isWalking,
-        isYoyoing
+        AIRBORNE,
+        GROUNDED,
+        YOYO
     }
 
     void Start()
@@ -38,13 +37,14 @@ public class MO_PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (playerState != PlayerState.isYoyoing)
+        if (playerState != PlayerState.YOYO)
         {
             var pos = new Vector3();
             pos.x = transform.position.x + Input.GetAxis("Horizontal") * Time.deltaTime * speed_;
             pos.y = transform.position.y;
 
-            if (!jumping_ && Input.GetAxis("Jump") != 0f && rb_.velocity.y == 0)
+            if (playerState != PlayerState.AIRBORNE &&
+                Input.GetAxis("Jump") != 0f && rb_.velocity.y == 0)
                 Jump(jumpForce_);
 
             // Restrict the upward velocity of the player
@@ -56,25 +56,26 @@ public class MO_PlayerController : MonoBehaviour
 
             if (holding_ != null)
                 holding_.transform.position = transform.position;
+
             if (Input.GetMouseButtonDown(0))
             {
                 yoyo.Launch();
-                playerState = PlayerState.isYoyoing;
+                playerState = PlayerState.YOYO;
             }
         }
-        else if (playerState == PlayerState.isYoyoing)
+        else if (playerState == PlayerState.YOYO)
         {
             if (Input.GetMouseButtonDown(0))
             {
                 yoyo.Release();
-                playerState = PlayerState.isIdle;
+                playerState = PlayerState.AIRBORNE;
             }
         }
     }
 
     void OnCollisionEnter2D(Collision2D c) {
         if (c.gameObject.layer == LayerMask.NameToLayer("World")) {
-            jumping_ = false;
+            playerState = PlayerState.GROUNDED;
         } else if (c.gameObject.layer == LayerMask.NameToLayer("Deadzone")) {
             transform.position = respawnLocation_.position;
             particles_.Play();
@@ -88,13 +89,10 @@ public class MO_PlayerController : MonoBehaviour
     }
 
     public void Jump(float thrust_) {
-        rb_.AddForce(transform.up * thrust_);
+        Vector3 velocity = rb_.velocity;
+        velocity.y = thrust_;
+        rb_.velocity = velocity;
 
-        jumping_ = true;
-    }
-
-    public void QuitYoyo()
-    {
-        playerState = PlayerState.isIdle;
+        playerState = PlayerState.AIRBORNE;
     }
 }
