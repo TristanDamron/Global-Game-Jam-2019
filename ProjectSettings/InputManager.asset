@@ -340,4 +340,4 @@ InputManager:
     invert: 0
     type: 2
     axis: 2
-    joyNum: 0
+joyNum: 0

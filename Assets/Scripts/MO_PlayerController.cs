@@ -12,8 +12,6 @@ public class MO_PlayerController : MonoBehaviour
     [SerializeField]
     private float jumpForce_ = 600.0f;
     [SerializeField]
-    private bool jumping_;
-    [SerializeField]
     private Transform respawnLocation_;
     [SerializeField]
     private GameObject holding_;
@@ -21,6 +19,7 @@ public class MO_PlayerController : MonoBehaviour
     public Rigidbody2D rb_;
     private ParticleSystem particles_;
     private Animator animator_;
+    [SerializeField]
     private PlayerState playerState = PlayerState.AIRBORNE;
 
     public enum PlayerState
@@ -53,15 +52,18 @@ public class MO_PlayerController : MonoBehaviour
         }
         if (playerState != PlayerState.YOYO)
         {
-            if (Input.GetAxis("Horizontal") != 0f && playerState != PlayerState.AIRBORNE) {
+            float horizontalInput = Input.GetAxis("Horizontal");
+            if (horizontalInput != 0f &&
+                playerState != PlayerState.AIRBORNE) {
+                if (horizontalInput < 0)
+                    animator_.gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, -90, 0));
+                else if (horizontalInput > 0)
+                    animator_.gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, 90, 0));
                 animator_.Play("Walk");
             } else if (playerState != PlayerState.AIRBORNE) {
                 animator_.Play("Idle");
             }
 
-            var pos = new Vector3();
-            pos.x = transform.position.x + Input.GetAxis("Horizontal") * Time.deltaTime * speed_;
-            pos.y = transform.position.y;
 
             if (playerState != PlayerState.AIRBORNE &&
                 Input.GetAxis("Jump") != 0f &&
@@ -72,8 +74,10 @@ public class MO_PlayerController : MonoBehaviour
             if (rb_.velocity.y >= yVelocityUpperLimit_)
                 rb_.velocity = new Vector2(rb_.velocity.x, yVelocityUpperLimit_);
 
-            pos.z = transform.position.z;
-            transform.position = pos;
+            Vector3 velocity = rb_.velocity;
+            velocity.x = horizontalInput * speed_;
+            // transform.position = pos;
+            rb_.velocity = velocity;
 
             if (holding_ != null)
                 holding_.transform.position = transform.position;
@@ -105,6 +109,7 @@ public class MO_PlayerController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D c) {
         if (c.gameObject.layer == LayerMask.NameToLayer("World")) {
+            animator_.Play("Jump");
             playerState = PlayerState.GROUNDED;
         } else if (c.gameObject.layer == LayerMask.NameToLayer("Deadzone")) {
             transform.position = respawnLocation_.position;
@@ -119,7 +124,6 @@ public class MO_PlayerController : MonoBehaviour
     }
 
     public void Jump(float thrust_) {
-        animator_.Play("Jump");
         Vector3 velocity = rb_.velocity;
         velocity.y += thrust_;
         rb_.velocity = velocity;
