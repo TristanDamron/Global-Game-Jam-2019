@@ -361,6 +361,14 @@ PrefabInstance:
       propertyPath: respawnLocation_
       value: 
       objectReference: {fileID: 699936493}
+    - target: {fileID: 355648206, guid: ce5c80a30dec8004ba186a27f15b2942, type: 3}
+      propertyPath: yVelocityUpperLimit_
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 355648206, guid: ce5c80a30dec8004ba186a27f15b2942, type: 3}
+      propertyPath: extraJumpGravity_
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 355648213, guid: ce5c80a30dec8004ba186a27f15b2942, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.049348414
@@ -404,14 +412,6 @@ PrefabInstance:
     - target: {fileID: 355648213, guid: ce5c80a30dec8004ba186a27f15b2942, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 355648208, guid: ce5c80a30dec8004ba186a27f15b2942, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.15099144
-      objectReference: {fileID: 0}
-    - target: {fileID: 355648208, guid: ce5c80a30dec8004ba186a27f15b2942, type: 3}
-      propertyPath: m_Size.y
-      value: 2.9259276
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce5c80a30dec8004ba186a27f15b2942, type: 3}
@@ -572,6 +572,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravityStrength: 0
+  playerVelocity: {x: 0, y: 0, z: 0}
 --- !u!4 &1215580203
 Transform:
   m_ObjectHideFlags: 0

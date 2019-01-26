@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class MO_PlayerController : MonoBehaviour
 {
-
     public MO_Yoyo yoyo;
+    public float yVelocityUpperLimit_ = 20.0f;
+    public float extraJumpGravity_ = 12.0f;
     [SerializeField]
     private float speed_;
     [SerializeField]
@@ -37,6 +38,17 @@ public class MO_PlayerController : MonoBehaviour
 
     void Update()
     {
+        if (playerState == PlayerState.AIRBORNE)
+        {
+            if (rb_.velocity.y == 0)
+                playerState = PlayerState.GROUNDED;
+            else
+            {
+                Vector3 velocity = rb_.velocity;
+                velocity.y -= extraJumpGravity_ * Time.deltaTime;
+                rb_.velocity = velocity;
+            }
+        }
         if (playerState != PlayerState.YOYO)
         {
             var pos = new Vector3();
@@ -44,12 +56,13 @@ public class MO_PlayerController : MonoBehaviour
             pos.y = transform.position.y;
 
             if (playerState != PlayerState.AIRBORNE &&
-                Input.GetAxis("Jump") != 0f && rb_.velocity.y == 0)
+                Input.GetAxis("Jump") != 0f &&
+                rb_.velocity.y == 0)
                 Jump(jumpForce_);
 
             // Restrict the upward velocity of the player
-            if (rb_.velocity.y >= 7f)
-                rb_.velocity = new Vector2(rb_.velocity.x, 7f);
+            if (rb_.velocity.y >= yVelocityUpperLimit_)
+                rb_.velocity = new Vector2(rb_.velocity.x, yVelocityUpperLimit_);
 
             pos.z = transform.position.z;
             transform.position = pos;
@@ -71,6 +84,7 @@ public class MO_PlayerController : MonoBehaviour
                 playerState = PlayerState.AIRBORNE;
             }
         }
+        DebugUI.instance.playerVelocity = rb_.velocity;
     }
 
     void OnCollisionEnter2D(Collision2D c) {
@@ -90,7 +104,7 @@ public class MO_PlayerController : MonoBehaviour
 
     public void Jump(float thrust_) {
         Vector3 velocity = rb_.velocity;
-        velocity.y = thrust_;
+        velocity.y += thrust_;
         rb_.velocity = velocity;
 
         playerState = PlayerState.AIRBORNE;

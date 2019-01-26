@@ -4809,8 +4809,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   yoyo: {fileID: 0}
+  yVelocityUpperLimit_: 14
+  extraJumpGravity_: 12
   speed_: 10
-  jumpForce_: 3000
+  jumpForce_: 14
   jumping_: 0
   respawnLocation_: {fileID: 0}
   holding_: {fileID: 0}
