@@ -9,11 +9,15 @@ public class PlayerController : MonoBehaviour
     private float speed_;
     [SerializeField]
     private bool jumping_;
+    [SerializeField]
+    private Transform respawnLocation_;
     private Rigidbody2D rb_;
+    private ParticleSystem particles_;
 
     void Start()
     {
         rb_ = GetComponent<Rigidbody2D>();
+        particles_ = GetComponent<ParticleSystem>();
     }
 
     void Update()
@@ -33,6 +37,9 @@ public class PlayerController : MonoBehaviour
     void OnCollisionEnter2D(Collision2D c) {
         if (c.gameObject.layer == LayerMask.NameToLayer("World")) {
             jumping_ = false;
+        } else if (c.gameObject.layer == LayerMask.NameToLayer("Deadzone")) {
+            transform.position = respawnLocation_.position;
+            particles_.Play();
         }
     }
 
