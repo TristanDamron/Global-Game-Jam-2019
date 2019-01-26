@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
     private bool jumping_;
     [SerializeField]
     private Transform respawnLocation_;
+    [SerializeField]
+    private GameObject holding_;
     private Rigidbody2D rb_;
     private ParticleSystem particles_;
 
@@ -32,6 +34,9 @@ public class PlayerController : MonoBehaviour
 
         pos.z = transform.position.z;
         transform.position = pos;
+
+        if (holding_ != null) 
+            holding_.transform.position = transform.position;
     }
 
     void OnCollisionEnter2D(Collision2D c) {
@@ -40,6 +45,12 @@ public class PlayerController : MonoBehaviour
         } else if (c.gameObject.layer == LayerMask.NameToLayer("Deadzone")) {
             transform.position = respawnLocation_.position;
             particles_.Play();
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D c) {
+        if (c.gameObject.name == "Collectable") {
+            holding_ = c.gameObject;
         }
     }
 
