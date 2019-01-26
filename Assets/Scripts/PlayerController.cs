@@ -28,9 +28,13 @@ public class PlayerController : MonoBehaviour
         pos.x = transform.position.x + Input.GetAxis("Horizontal") * Time.deltaTime * speed_;   
         pos.y = transform.position.y;
 
-        if (!jumping_ && Input.GetAxis("Jump") != 0f) {
+        if (!jumping_ && Input.GetAxis("Jump") != 0f && rb_.velocity.y == 0) {
             Jump(200f);
         }        
+
+        // Restrict the upward velocity of the player
+        if (rb_.velocity.y >= 7f)
+            rb_.velocity = new Vector2(rb_.velocity.x, 7f);
 
         pos.z = transform.position.z;
         transform.position = pos;
@@ -55,7 +59,8 @@ public class PlayerController : MonoBehaviour
     }
 
     public void Jump(float thrust_) {
-        rb_.AddForce(transform.up * thrust_);   
+        rb_.AddForce(transform.up * thrust_);
+
         jumping_ = true;
     }
 }
