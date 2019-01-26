@@ -84,7 +84,7 @@ public class MO_PlayerController : MonoBehaviour
                     yoyo.Launch();
                     playerState = PlayerState.YOYO;
                 }
-            } else if (Input.GetAxis("Yoyo") != 0f) {
+            } else if (Input.GetAxisRaw("Yoyo") != 0f) {
                 yoyo.Launch();
                 playerState = PlayerState.YOYO;
             }
@@ -95,7 +95,7 @@ public class MO_PlayerController : MonoBehaviour
             {
                 yoyo.Release();
                 playerState = PlayerState.IDLE;
-            } else if (Input.GetAxis("Yoyo") != 0f) {
+            } else if (Input.GetAxisRaw("Yoyo") != 0f) {
                 yoyo.Release();
                 playerState = PlayerState.IDLE;
             }            
