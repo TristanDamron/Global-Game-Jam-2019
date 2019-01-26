@@ -56,8 +56,14 @@ public class MO_PlayerController : MonoBehaviour
 
             if (holding_ != null)
                 holding_.transform.position = transform.position;
-            if (Input.GetMouseButtonDown(0))
-            {
+
+            if (Input.GetJoystickNames().Length == 0) {
+                if (Input.GetMouseButtonDown(0))
+                {
+                    yoyo.Launch();
+                    playerState = PlayerState.isYoyoing;
+                }
+            } else if (Input.GetAxis("Yoyo") != 0f) {
                 yoyo.Launch();
                 playerState = PlayerState.isYoyoing;
             }
@@ -68,7 +74,10 @@ public class MO_PlayerController : MonoBehaviour
             {
                 yoyo.Release();
                 playerState = PlayerState.isIdle;
-            }
+            } else if (Input.GetAxis("Yoyo") != 0f) {
+                yoyo.Release();
+                playerState = PlayerState.isIdle;
+            }            
         }
     }
 
