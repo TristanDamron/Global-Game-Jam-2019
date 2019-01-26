@@ -22,6 +22,6 @@ public class MO_Yoyo_Target : MonoBehaviour
         // Debug.DrawRay(parentPosition, Vector3.up, Color.blue);
         Debug.DrawRay(parentPosition, goalDirection, Color.grey);
         Debug.DrawRay(parentPosition, goalDirection.normalized * lengthToTarget);
-        transform.position = goalPosition;
+        transform.position = parentPosition + goalDirection.normalized * lengthToTarget;
     }
 }

@@ -772,15 +772,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   length: 7
   speed: 45
-  spinSpeed: 300
-  catchPlayerDistance: 2
+  maxVelocity: 15
   player: {fileID: 1993257405}
   target: {fileID: 1687599393}
   yoyoSpinTarget: {fileID: 197888373}
   yoyoState: 3
-  actualTargetOffset: 3
-  yoyoGravity: 45
-  yoyoGravityRadius: 80
+  actualTargetOffset: 1
+  yoyoGravity: 60
 --- !u!120 &1570852120
 LineRenderer:
   m_ObjectHideFlags: 0

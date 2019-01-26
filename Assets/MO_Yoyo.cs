@@ -6,12 +6,9 @@ public class MO_Yoyo : MonoBehaviour
 {
     public float length = 5.0f;
     public float speed = 1.0f;
-    public float spinSpeed = 10.0f;
-    public float gravityStrengthInitial = 1.0f;
-    public float gravityStrengthGrowRate = 1.0f;
-    public float gravityStrengthMax = 10.0f;
+    // public float spinSpeed = 10.0f;
+    public float maxVelocity = 14f;
     // public float playerPullSpeedInitial = 5.0f;
-    public float catchPlayerDistance = 1.0f;
     public MO_PlayerController player;
     public MO_Yoyo_Target target;
 
@@ -35,9 +32,6 @@ public class MO_Yoyo : MonoBehaviour
     // position above the yoyo
     public float actualTargetOffset = 10.0f;
     public float yoyoGravity = 5.0f;
-    public float yoyoGravityRadius = 12.0f;
-
-    private float gravityStrength = 1.0f;
 
     private Vector3 actualTarget;
 
@@ -73,7 +67,7 @@ public class MO_Yoyo : MonoBehaviour
                 PullUpdate();
                 break;
             case YoyoState.RELEASE:
-                ReleaseYoyo();
+                Release();
                 break;
         }
     }
@@ -114,14 +108,6 @@ public class MO_Yoyo : MonoBehaviour
         {
             yoyoSpinTarget.position = player.transform.position;
             yoyoState = YoyoState.PULL;
-            gravityStrength = gravityStrengthInitial;
-            /*
-            Vector3 direction = actualTarget - player.transform.position;
-            direction = Vector3.Cross(direction, Vector3.forward);
-            direction = direction.normalized;
-            actualTarget = transform.position + (direction * actualTargetOffset);
-            */
-            // actualTarget = transform.position;
         }
     }
 
@@ -129,56 +115,25 @@ public class MO_Yoyo : MonoBehaviour
     {
         DrawYoyoString();
 
+        Vector3 forceDirection = actualTarget - player.transform.position;
+        float playerDistance = forceDirection.magnitude;
+
         Vector3 direction = actualTarget - player.transform.position;
-        direction = Vector3.Cross(direction, Vector3.forward);
+        direction = Vector3.Cross(direction, Vector3.forward * spinDirection);
         direction = direction.normalized;
-        actualTarget = transform.position + (direction * actualTargetOffset);
+        actualTarget = transform.position + (direction * playerDistance / 2);
 
         // always pull player toward us
         // Vector3 forceDirection = transform.position - player.transform.position;
-        Vector3 forceDirection = actualTarget - player.transform.position;
         Debug.DrawLine(actualTarget, transform.position, Color.red);
-        float playerDistance = forceDirection.magnitude;
-        // float gravityStrength = playerDistance / yoyoGravityRadius;
-        // gravityStrength = 1;
-        // Vector3 force = forceDirection.normalized * yoyoGravity * gravityStrength;
-        /*
-        float gravityStrength = 0;
-        if (yoyoGravityRadius > playerDistance)
-            gravityStrength = (playerDistance / yoyoGravityRadius);
-        gravityStrength *= gravityStrength;
-        gravityStrength = 1 - gravityStrength;
-        */
-        // float gravityStrength = 1;
-        gravityStrength += gravityStrengthGrowRate * Time.deltaTime;
-        DebugUI.instance.gravityStrength = gravityStrength;
-        Vector3 force = forceDirection.normalized * yoyoGravity * gravityStrength;
+        Vector3 force = forceDirection.normalized * yoyoGravity;
         Debug.DrawRay(player.transform.position, force, Color.grey);
-        player.rb_.AddForce(force * Time.deltaTime);
-        if (Input.GetMouseButtonDown(0))
-            yoyoState = YoyoState.RELEASE;
-        /*
-        // OLD TRANSFORM METHOD
-        Spin();
-        DrawYoyoString();
-        // so this basically pulls in the spin target, which is spun because it's
-        // a child of yoyo, then sets the player position to the same spot.
-        // this isn't going to play nicely with physics though
-        Vector3 forceDirection = yoyoSpinTarget.position - transform.position;
-        yoyoSpinTarget.position -= forceDirection.normalized * Time.fixedDeltaTime * playerPullSpeed;
-        player.transform.position = yoyoSpinTarget.position;
-        Debug.DrawRay(yoyoSpinTarget.position, Vector3.up, Color.green);
-
-        if (Vector3.Distance(
-            yoyoSpinTarget.position,
-            transform.position) <= catchPlayerDistance)
-        {
-            yoyoState = YoyoState.RELEASE;
-        }
-        */
+        player.rb_.AddForce(force);
+        if (player.rb_.velocity.magnitude > maxVelocity)
+            player.rb_.velocity = player.rb_.velocity.normalized * maxVelocity;
     }
 
-    private void ReleaseYoyo()
+    public void Release()
     {
         lineRenderer.enabled = false;
         player.QuitYoyo();
@@ -188,7 +143,7 @@ public class MO_Yoyo : MonoBehaviour
 
     private void Spin()
     {
-        transform.Rotate(Vector3.forward, spinSpeed * spinDirection * Time.deltaTime);
+        // transform.Rotate(Vector3.forward, spinSpeed * spinDirection * Time.deltaTime);
     }
 
     private void DrawYoyoString()

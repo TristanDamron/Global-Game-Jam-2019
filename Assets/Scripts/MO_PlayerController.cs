@@ -62,9 +62,13 @@ public class MO_PlayerController : MonoBehaviour
                 playerState = PlayerState.isYoyoing;
             }
         }
-
-        if (playerState == PlayerState.isYoyoing)
+        else if (playerState == PlayerState.isYoyoing)
         {
+            if (Input.GetMouseButtonDown(0))
+            {
+                yoyo.Release();
+                playerState = PlayerState.isIdle;
+            }
         }
     }
 
