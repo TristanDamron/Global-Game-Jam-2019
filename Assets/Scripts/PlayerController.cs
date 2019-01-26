@@ -23,14 +23,14 @@ public class PlayerController : MonoBehaviour
         pos.y = transform.position.y;
 
         if (!jumping_ && Input.GetAxis("Jump") != 0f) {
-            Jump(5f);
+            Jump(200f);
         }        
 
         pos.z = transform.position.z;
         transform.position = pos;
     }
 
-    void OnCollisionEnter(Collision c) {
+    void OnCollisionEnter2D(Collision2D c) {
         if (c.gameObject.layer == LayerMask.NameToLayer("World")) {
             jumping_ = false;
         }
