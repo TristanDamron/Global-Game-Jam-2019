@@ -8,10 +8,7 @@ public class MO_Yoyo : MonoBehaviour
     public float speed = 1.0f;
     public float spinSpeed = 10.0f;
     public float playerPullSpeedInitial = 5.0f;
-    // public float playerPullSpeedFalloff = 1.0f;
-    // public float spinTargetDistance = 2.0f;
     public float catchPlayerDistance = 1.0f;
-    // public float anchorYOffset = -5.0f;
     public MO_PlayerController player;
     public MO_Yoyo_Target target;
 
@@ -76,9 +73,6 @@ public class MO_Yoyo : MonoBehaviour
             goalPosition = target.transform.position;
             goalDirection = transform.position - goalPosition;
             goalPosition = transform.position - (goalDirection.normalized * length);
-            // yoyoSpinTarget.position = transform.position + (goalDirection.normalized * spinTargetDistance);
-            // yoyoSpinTarget.position = transform.position + (Vector3.up * spinTargetDistance);
-            // yoyoSpinTarget.position = transform.position;
             yoyoState = YoyoState.LAUNCHED;
             playerPullSpeed = playerPullSpeedInitial;
 
@@ -105,26 +99,6 @@ public class MO_Yoyo : MonoBehaviour
             transform.position -= goalDirection.normalized * frameSpeed;
         else
         {
-            /*
-            // SPRING JOINT METHOD
-            lineRenderer.enabled = true;
-            holdPosition = goalPosition;
-            transform.position = goalPosition;
-            // springJoint = yoyoSpinTarget.gameObject.AddComponent<SpringJoint2D>();
-            springJoint = gameObject.AddComponent<SpringJoint2D>();
-            // yoyoSpinTarget.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
-            GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
-            // springJoint.anchor = new Vector2(0, anchorYOffset);
-            springJoint.autoConfigureConnectedAnchor = false;
-            springJoint.anchor = new Vector2(0, -spinTargetDistance);
-            springJoint.autoConfigureDistance = false;
-            springJoint.connectedBody = player.rb_;
-            springJoint.frequency = 0.6f;
-            springJoint.dampingRatio = 0.5f;
-            springJoint.distance = 0.2f;
-            // springJoint.distance = spinTargetDistance;
-            yoyoState = YoyoState.PULL;
-            */
             yoyoSpinTarget.position = player.transform.position;
             yoyoState = YoyoState.PULL;
         }
@@ -133,9 +107,10 @@ public class MO_Yoyo : MonoBehaviour
     private void PullUpdate()
     {
         Spin();
+        DrawYoyoString();
         // so this basically pulls in the spin target, which is spun because it's
         // a child of yoyo, then sets the player position to the same spot.
-        // this isn't going to play nicely with physics
+        // this isn't going to play nicely with physics though
         Vector3 forceDirection = yoyoSpinTarget.position - transform.position;
         yoyoSpinTarget.position -= forceDirection.normalized * Time.fixedDeltaTime * playerPullSpeed;
         player.transform.position = yoyoSpinTarget.position;
@@ -147,28 +122,6 @@ public class MO_Yoyo : MonoBehaviour
         {
             yoyoState = YoyoState.RELEASE;
         }
-        /*
-        // SPRING JOINT METHOD
-        Spin();
-        DrawYoyoString();
-        */
-        /*
-        Spin();
-        DrawYoyoString();
-        Debug.DrawRay(yoyoSpinTarget.position, Vector3.up, Color.green);
-        // transform.position = goalPosition;
-        Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
-        Vector3 forceDirection = yoyoSpinTarget.position - player.transform.position;
-        rb.AddForce(forceDirection.normalized * playerPullSpeed);
-        rb.AddForce(Vector3.up * 0.2f);
-        // playerPullSpeed -= playerPullSpeedFalloff * Time.deltaTime;
-        // if (playerPullSpeed < 0) playerPullSpeed = 0;
-        if (Vector3.Distance(yoyoSpinTarget.position, player.transform.position) <= catchPlayerDistance)
-        {
-            yoyoState = YoyoState.SPIN_CATCH;
-            catchOffset = yoyoSpinTarget.position - player.transform.position;
-        }
-        */
     }
 
     private void ReleaseYoyo()
@@ -185,6 +138,7 @@ public class MO_Yoyo : MonoBehaviour
 
     private void DrawYoyoString()
     {
+        if (!lineRenderer.enabled) lineRenderer.enabled = true;
         lineRenderer.positionCount = 2;
         lineRenderer.SetPosition(0, player.transform.position + offsetFromPlayer);
         lineRenderer.SetPosition(1, transform.position);
