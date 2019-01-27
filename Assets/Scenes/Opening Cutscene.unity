@@ -1029,6 +1029,59 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4547237879800692015, guid: 13b6c60c64436434a900d20fd53c98dd,
+        type: 3}
+      propertyPath: textboxesContents.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4547237879800692015, guid: 13b6c60c64436434a900d20fd53c98dd,
+        type: 3}
+      propertyPath: textboxesContents.Array.data[0]
+      value: A reflection of a person is found in which they dwell the most. A space
+        for the mind to rest and the body to rejuvenate is a rare and fragile thing.
+        Our homes, our places of rest may disappear on a fateful day that takes that
+        delicate peace from it, from us. Time may not heal a husk of what once was.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4547237879800692015, guid: 13b6c60c64436434a900d20fd53c98dd,
+        type: 3}
+      propertyPath: textboxesContents.Array.data[1]
+      value: and fragile thing. Our homes, our places of rest may disappear on a fateful
+        day that takes that delicate peace from it, from us. Time may not heal a husk
+        of what once was.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4547237879800692015, guid: 13b6c60c64436434a900d20fd53c98dd,
+        type: 3}
+      propertyPath: textboxesContents.Array.data[2]
+      value: Time may not heal a husk of what once was.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4547237879800692015, guid: 13b6c60c64436434a900d20fd53c98dd,
+        type: 3}
+      propertyPath: textboxesContents.Array.data[3]
+      value: Each passing day may bring upon tired minds regret of leaving, and longing
+        to return. Memories repeat themselves until a pit
+      objectReference: {fileID: 0}
+    - target: {fileID: 4547237879800692015, guid: 13b6c60c64436434a900d20fd53c98dd,
+        type: 3}
+      propertyPath: textboxesContents.Array.data[4]
+      value: of guilt is felt in the stomach, but at last the first steps toward this
+        old thing called home begin.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4547237879800692015, guid: 13b6c60c64436434a900d20fd53c98dd,
+        type: 3}
+      propertyPath: textboxesContents.Array.data[5]
+      value: '...'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4547237879800692015, guid: 13b6c60c64436434a900d20fd53c98dd,
+        type: 3}
+      propertyPath: textboxesContents.Array.data[6]
+      value: This boy, Russell, is going home. He expects he will find an empty building,
+        but remnants of his past, of himself, dwell within
+      objectReference: {fileID: 0}
+    - target: {fileID: 4547237879800692015, guid: 13b6c60c64436434a900d20fd53c98dd,
+        type: 3}
+      propertyPath: textboxesContents.Array.data[7]
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13b6c60c64436434a900d20fd53c98dd, type: 3}
 --- !u!1 &1083749116
@@ -1389,8 +1442,8 @@ Camera:
   m_GameObject: {fileID: 1949225984}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.7411765, g: 0.965763, b: 0.92941177, a: 0}
   m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
