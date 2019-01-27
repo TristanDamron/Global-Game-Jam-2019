@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour
 
         if (jumpTimer_ < jumpDuration_) {
             Vector3 pos = transform.position;
-            pos.y += thrust_ - (jumpDuration_ - jumpTimer_);
+            pos.y += thrust_ - jumpTimer_;
             transform.position = Vector3.Lerp(transform.position, pos, Time.deltaTime);
         }
     }
