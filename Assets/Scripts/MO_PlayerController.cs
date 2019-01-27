@@ -82,6 +82,7 @@ public class MO_PlayerController : MonoBehaviour
                 else if (horizontalInput > 0)
                     animator_.gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, 90, 0));
                 animator_.Play("Walk");
+                AudioController.PlaySFX("sfx_footstep01");
             } else if (playerState != PlayerState.AIRBORNE) {
                 animator_.Play("Idle");
             }
@@ -133,6 +134,7 @@ public class MO_PlayerController : MonoBehaviour
         if (c.gameObject.layer == LayerMask.NameToLayer("World")) {
             animator_.Play("Jump");
             playerState = PlayerState.GROUNDED;
+            AudioController.PlaySFX("sfx_land");                        
         } else if (c.gameObject.layer == LayerMask.NameToLayer("Deadzone")) {
             transform.position = respawnLocation_.position;
             particles_.Play();
@@ -151,13 +153,16 @@ public class MO_PlayerController : MonoBehaviour
         rb_.velocity = velocity;
 
         playerState = PlayerState.AIRBORNE;
+        AudioController.PlaySFX("sfx_jump");
     }
 
     public bool IsAirborne()
     {
         RaycastHit2D hit = Physics2D.Raycast(bottom_, Vector3.down, 0.2f, 1 << LayerMask.NameToLayer("World"));
-        if (hit && hit.collider)
+        if (hit && hit.collider) {            
             return false;
+        }
+
         return true;
     }
 
