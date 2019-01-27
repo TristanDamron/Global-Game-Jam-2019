@@ -90,6 +90,7 @@ public class PlayerController : MonoBehaviour
             animator_.Play("Jump"); 
             AudioController.PlaySFX("sfx_land");                
         } else if (c.gameObject.layer == LayerMask.NameToLayer("Deadzone")) {
+            QuitYoyo();
             transform.position = respawn_.position;
             AudioController.PlaySpawn();         
             particles_.Play();
