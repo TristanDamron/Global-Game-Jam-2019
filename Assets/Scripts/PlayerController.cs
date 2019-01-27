@@ -44,9 +44,8 @@ public class PlayerController : MonoBehaviour
 
         if (YoyoInput() && !yoyoing_) {
             LaunchYoyo(); 
-        } else if (YoyoInput() && yoyoing_) {
-            QuitYoyo();
-        }
+            StartCoroutine(EndYoyo());
+        } 
     }
 
     void Jump(float thrust_) {
@@ -82,5 +81,10 @@ public class PlayerController : MonoBehaviour
     {
         yoyo.Release();
         yoyoing_ = false;
+    }
+
+    IEnumerator EndYoyo() {
+        yield return new WaitForSeconds(1f);
+        QuitYoyo();
     }
 }
