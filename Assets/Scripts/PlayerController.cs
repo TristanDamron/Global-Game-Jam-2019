@@ -55,7 +55,8 @@ public class PlayerController : MonoBehaviour
         }
 
         if (Input.GetAxis("Jump") != 0) { 
-            AudioController.PlayJump();    
+            if (canJump_)
+                AudioController.PlayJump();    
             Jump(jumpSpeed_);
         }
 
