@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     private Transform respawn_;
     [SerializeField]
     private float jumpSpeed_;
+    private bool midAirShot;
     private ParticleSystem particles_;
     private Animator animator_;
     
@@ -66,7 +67,7 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Reached maximum jump height"); 
         }
 
-        if (YoyoInput() && !yoyoing_) {
+        if (YoyoInput() && !yoyoing_ && !midAirShot) {
             AudioController.PlayYoyo();
             LaunchYoyo(); 
             StartCoroutine(EndYoyo());
@@ -89,6 +90,7 @@ public class PlayerController : MonoBehaviour
             jumpTimer_ = 0f;
             animator_.Play("Jump"); 
             AudioController.PlaySFX("sfx_land");                
+            midAirShot = false;
         } else if (c.gameObject.layer == LayerMask.NameToLayer("Deadzone")) {
             QuitYoyo();
             transform.position = respawn_.position;
@@ -113,6 +115,7 @@ public class PlayerController : MonoBehaviour
     {
         yoyo.Launch();
         yoyoing_ = true;
+        midAirShot = true;
     }    
 
     public void QuitYoyo()
