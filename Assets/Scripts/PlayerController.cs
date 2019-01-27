@@ -67,7 +67,7 @@ public class PlayerController : MonoBehaviour
 
 
         //faster falling
-        if (rb_.velocity.y < 0) {
+        if (rb_.velocity.y < 0 && !yoyoing_) {
             rb_.velocity += Vector2.up * Physics.gravity.y * (fallMultiplier_ - 1) * Time.deltaTime;
         }
 
