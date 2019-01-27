@@ -84,7 +84,7 @@ public class MO_PlayerController : MonoBehaviour
 
         // check if in air
         bool inAir = IsAirborne();
-        DebugUI.instance.isAirborne = inAir;
+        //DebugUI.instance.isAirborne = inAir;
 
         if (inAir)
         {
