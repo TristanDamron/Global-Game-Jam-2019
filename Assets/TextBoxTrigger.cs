@@ -15,7 +15,7 @@ public class TextBoxTrigger : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D c)
     {
-        if (!c.GetComponent<PlayerController>()) return;
+        if (c.tag != "Player") return;
         TextBoxController.CreateTextBoxes(textboxesContents);
         Destroy(this.gameObject);
     }
