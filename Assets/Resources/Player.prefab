@@ -98,7 +98,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 2
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -4811,7 +4811,8 @@ MonoBehaviour:
   yoyo: {fileID: 0}
   yVelocityUpperLimit_: 14
   extraJumpGravity_: 12
-  speed_: 10
+  walkSpeed_: 10
+  airSpeed_: 8
   jumpForce_: 14
   respawnLocation_: {fileID: 0}
   holding_: {fileID: 0}

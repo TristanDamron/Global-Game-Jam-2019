@@ -3349,6 +3349,14 @@ PrefabInstance:
       propertyPath: yoyo
       value: 
       objectReference: {fileID: 1551550932}
+    - target: {fileID: 355648206, guid: ce5c80a30dec8004ba186a27f15b2942, type: 3}
+      propertyPath: walkSpeed_
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 355648206, guid: ce5c80a30dec8004ba186a27f15b2942, type: 3}
+      propertyPath: airSpeed_
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 355648213, guid: ce5c80a30dec8004ba186a27f15b2942, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.24
