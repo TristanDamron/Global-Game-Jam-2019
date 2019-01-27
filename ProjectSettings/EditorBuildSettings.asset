@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Matt's Level 1 Clone.unity
+    guid: cca4ac4dbb97f7740a821d4f3a579ba2
   m_configObjects: {}
