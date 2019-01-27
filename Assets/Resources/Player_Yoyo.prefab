@@ -20,6 +20,8 @@ MonoBehaviour:
   jumping_: 0
   yVelocityUpperLimit_: 10
   yoyoing_: 0
+  respawn_: {fileID: 0}
+  jumpSpeed_: 20
 --- !u!1 &7472451690078525440
 GameObject:
   m_ObjectHideFlags: 0
@@ -106,6 +108,14 @@ PrefabInstance:
     - target: {fileID: 355648213, guid: ce5c80a30dec8004ba186a27f15b2942, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 355648209, guid: ce5c80a30dec8004ba186a27f15b2942, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 355648209, guid: ce5c80a30dec8004ba186a27f15b2942, type: 3}
+      propertyPath: m_GravityScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 734317937438601476, guid: ce5c80a30dec8004ba186a27f15b2942,
         type: 3}
@@ -467,8 +477,7 @@ PrefabInstance:
       propertyPath: m_RootBone
       value: 
       objectReference: {fileID: 7891337333736051692}
-    m_RemovedComponents:
-    - {fileID: 355648206, guid: ce5c80a30dec8004ba186a27f15b2942, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce5c80a30dec8004ba186a27f15b2942, type: 3}
 --- !u!4 &7472451689950343461 stripped
 Transform:
