@@ -507,8 +507,7 @@ PrefabInstance:
       propertyPath: m_RootBone
       value: 
       objectReference: {fileID: 7891337333736051692}
-    m_RemovedComponents:
-    - {fileID: 355648206, guid: ce5c80a30dec8004ba186a27f15b2942, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce5c80a30dec8004ba186a27f15b2942, type: 3}
 --- !u!4 &7472451689950343461 stripped
 Transform:
@@ -955,6 +954,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7472451690078525441}
     m_Modifications:
+    - target: {fileID: 4821195505374327943, guid: be65df75f01a2bc40bf08998c4830aa6,
+        type: 3}
+      propertyPath: m_Name
+      value: Yoyo
+      objectReference: {fileID: 0}
     - target: {fileID: 4821195505374327936, guid: be65df75f01a2bc40bf08998c4830aa6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1012,6 +1016,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4821195505374327937, guid: be65df75f01a2bc40bf08998c4830aa6,
         type: 3}
+      propertyPath: length
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4821195505374327937, guid: be65df75f01a2bc40bf08998c4830aa6,
+        type: 3}
+      propertyPath: maxVelocity
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4821195505374327937, guid: be65df75f01a2bc40bf08998c4830aa6,
+        type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1837163396}
@@ -1025,10 +1039,10 @@ PrefabInstance:
       propertyPath: yoyoSpinTarget
       value: 
       objectReference: {fileID: 2691790265267840517}
-    - target: {fileID: 4821195505374327943, guid: be65df75f01a2bc40bf08998c4830aa6,
+    - target: {fileID: 4821195505374327937, guid: be65df75f01a2bc40bf08998c4830aa6,
         type: 3}
-      propertyPath: m_Name
-      value: Yoyo
+      propertyPath: actualTargetOffset
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be65df75f01a2bc40bf08998c4830aa6, type: 3}
