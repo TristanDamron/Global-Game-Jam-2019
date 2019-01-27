@@ -10,7 +10,7 @@ public class MO_Yoyo : MonoBehaviour
     public float maxVelocity = 14f;
     public float lateralDistance = 0.5f;
     // public float playerPullSpeedInitial = 5.0f;
-    public MO_PlayerController player;
+    public PlayerController player;
     public MO_Yoyo_Target target;
 
     public Transform yoyoSpinTarget;

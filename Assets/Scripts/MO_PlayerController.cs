@@ -31,7 +31,10 @@ public class MO_PlayerController : MonoBehaviour
     private ParticleSystem particles_;
     private Animator animator_;
     [SerializeField]
-    private PlayerState playerState = PlayerState.AIRBORNE;
+    private PlayerState playerState;
+    private float jumpCounter;
+    [SerializeField]
+    private float jumpDuration;
 
     private Vector3 top_;
     private Vector3 right_;
@@ -186,15 +189,20 @@ public class MO_PlayerController : MonoBehaviour
             LaunchYoyo();
             return;
         }
-        if (Input.GetAxis("Jump") != 0.0f) Jump(jumpForce_);
+
+        if (Input.GetAxis("Jump") != 0.0f) {
+            Jump(jumpForce_);
+        }
+
         if (horizontalInput != 0)
             animator_.Play("Walk");
         else
             animator_.Play("Idle");
         AudioController.PlaySFX("sfx_footstep01");
 
-        Vector3 velocity = rb_.velocity;
-        velocity.x = horizontalInput * walkSpeed_;
+        Vector3 pos = transform.localPosition;
+        pos.x = horizontalInput * walkSpeed_ * Time.deltaTime;
+        transform.localPosition = pos;
         // velocity.x += horizontalInput * walkSpeed;
 
         /*
@@ -209,7 +217,6 @@ public class MO_PlayerController : MonoBehaviour
             velocity.x = walkSpeedMax_ * Mathf.Sign(velocity.x);
             */
 
-        rb_.velocity = velocity;
     }
 
     void AirborneUpdate(float horizontalInput)
@@ -291,11 +298,14 @@ public class MO_PlayerController : MonoBehaviour
     }
 
     public void Jump(float thrust_) {
-        Vector3 velocity = rb_.velocity;
-        velocity.y += thrust_;
-        rb_.velocity = velocity;
+        jumpCounter++;
 
-        playerState = PlayerState.AIRBORNE;
+        if (jumpCounter < jumpDuration) {
+            Vector3 pos = transform.localPosition;
+            pos.y += thrust_ * Time.deltaTime;
+            transform.localPosition = pos;
+            Debug.Log("Jump!");
+        }
         AudioController.PlaySFX("sfx_jump");
     }
 
