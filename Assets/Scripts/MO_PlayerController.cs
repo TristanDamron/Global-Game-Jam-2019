@@ -307,8 +307,8 @@ public class MO_PlayerController : MonoBehaviour
 
     private bool CollisionCheck(Vector3 origin, Vector3 direction, float distance)
     {
-        origin = transform.position + origin;
-        direction = transform.position + direction;
+        origin = transform.localPosition + origin;
+        direction = transform.localPosition + direction;
         RaycastHit2D hit = Physics2D.Raycast(origin, direction, distance, 1 << LayerMask.NameToLayer("World"));
         if (hit && hit.collider)
             return true;
