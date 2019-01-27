@@ -54,7 +54,7 @@ public class MO_Yoyo : MonoBehaviour
         target.gameObject.SetActive(true);
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         switch (yoyoState)
         {
@@ -65,10 +65,10 @@ public class MO_Yoyo : MonoBehaviour
                 LaunchedUpdate();
                 break;
             case YoyoState.PULL:
-                PullUpdate();
+                 PullUpdate();
                 break;
             case YoyoState.RELEASE:
-                // Release();
+                Release();
                 player.QuitYoyo();
                 break;
         }

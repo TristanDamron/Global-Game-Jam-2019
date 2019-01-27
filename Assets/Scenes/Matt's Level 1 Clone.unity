@@ -854,6 +854,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 284054406}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &291038197 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7472451690078525441, guid: 7deca43e5b7a9174eac215908c80dbf1,
+    type: 3}
+  m_PrefabInstance: {fileID: 2013880765}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &297649164 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3013407557610034354, guid: 0d5c151c5e1c81943ae43e9b6729f43d,
@@ -1878,11 +1884,11 @@ PrefabInstance:
         type: 3}
       propertyPath: target_
       value: 
-      objectReference: {fileID: 1302282940}
+      objectReference: {fileID: 291038197}
     - target: {fileID: 1236914458375550072, guid: 46813698592c9d6469d161bdeff1ddac,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46813698592c9d6469d161bdeff1ddac, type: 3}
@@ -3914,18 +3920,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d5c151c5e1c81943ae43e9b6729f43d, type: 3}
---- !u!114 &1803085940 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2691790267010976341, guid: 7deca43e5b7a9174eac215908c80dbf1,
-    type: 3}
-  m_PrefabInstance: {fileID: 2013880765}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8aa4596c386e0a043b9ff513d1cdc0b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1830947955
 GameObject:
   m_ObjectHideFlags: 0
@@ -4115,32 +4109,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d5c151c5e1c81943ae43e9b6729f43d, type: 3}
---- !u!1 &1837163387 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7472451689950343485, guid: 7deca43e5b7a9174eac215908c80dbf1,
-    type: 3}
-  m_PrefabInstance: {fileID: 2013880765}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1837163396
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1837163387}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 665b8645842e7dc4bbfc41cd4211f031, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  yoyo: {fileID: 1803085940}
-  rb_: {fileID: 0}
-  speed_: 5
-  jumpTimer_: 0
-  jumpDuration_: 20
-  jumping_: 0
-  yVelocityUpperLimit_: 10
-  yoyoing_: 0
 --- !u!4 &1885199645 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3013407557610034354, guid: 0d5c151c5e1c81943ae43e9b6729f43d,
@@ -4690,11 +4658,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player_Yoyo
       objectReference: {fileID: 0}
-    - target: {fileID: 7472451690078525440, guid: 7deca43e5b7a9174eac215908c80dbf1,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7472451690078525441, guid: 7deca43e5b7a9174eac215908c80dbf1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4750,48 +4713,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7472451689950343486, guid: 7deca43e5b7a9174eac215908c80dbf1,
-        type: 3}
-      propertyPath: walkSpeedMax_
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 7472451689950343486, guid: 7deca43e5b7a9174eac215908c80dbf1,
-        type: 3}
-      propertyPath: airSpeedMax_
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 7472451689950343486, guid: 7deca43e5b7a9174eac215908c80dbf1,
-        type: 3}
-      propertyPath: walkFriction_
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7472451689950343486, guid: 7deca43e5b7a9174eac215908c80dbf1,
-        type: 3}
-      propertyPath: airFriction_
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7472451689950343486, guid: 7deca43e5b7a9174eac215908c80dbf1,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7472451689950343486, guid: 7deca43e5b7a9174eac215908c80dbf1,
-        type: 3}
-      propertyPath: jumpDuration
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 7472451689950343486, guid: 7deca43e5b7a9174eac215908c80dbf1,
-        type: 3}
-      propertyPath: playerState
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2691790267010976341, guid: 7deca43e5b7a9174eac215908c80dbf1,
-        type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 1837163396}
-    m_RemovedComponents:
-    - {fileID: 7472451689950343486, guid: 7deca43e5b7a9174eac215908c80dbf1, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7deca43e5b7a9174eac215908c80dbf1, type: 3}
 --- !u!1 &2069275702
 GameObject:

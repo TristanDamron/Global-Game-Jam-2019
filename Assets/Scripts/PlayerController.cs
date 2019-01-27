@@ -42,8 +42,11 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Reached maximum jump height"); 
         }
 
-        if (YoyoInput() && !yoyoing_) LaunchYoyo();
-        else QuitYoyo();
+        if (YoyoInput() && !yoyoing_) {
+            LaunchYoyo(); 
+        } else if (YoyoInput() && yoyoing_) {
+            QuitYoyo();
+        }
     }
 
     void Jump(float thrust_) {
