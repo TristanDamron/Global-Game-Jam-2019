@@ -17,6 +17,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float yVelocityUpperLimit_;
     [SerializeField]
+    private float extraFallingGravityRate_ = 1.0f;
+    [SerializeField]
+    private float extraFallingGravityMax_ = 10.0f;
+    [SerializeField]
     private bool yoyoing_;
     [SerializeField]
     private Transform respawn_;
@@ -25,7 +29,8 @@ public class PlayerController : MonoBehaviour
     private bool midAirShot;
     private ParticleSystem particles_;
     private Animator animator_;
-    
+
+    private float extraFallingGravity_ = 0.0f;
 
     void Start() {
         rb_ = GetComponent<Rigidbody2D>();
@@ -66,6 +71,20 @@ public class PlayerController : MonoBehaviour
             rb_.velocity = new Vector2(rb_.velocity.x, yVelocityUpperLimit_);       
             Debug.Log("Reached maximum jump height"); 
         }
+        else
+        {
+            // falling and not yoyoing
+            if (!yoyoing_ && rb_.velocity.y < 0.2f)
+            {
+                // apply extra fake gravity
+                extraFallingGravity_ += extraFallingGravityRate_;
+                if (extraFallingGravity_ > extraFallingGravityMax_)
+                    extraFallingGravity_ = extraFallingGravityMax_;
+                // transform.position.y -= extraFallingGravityRate_ * Time.deltaTime;
+                Vector2 velocity = rb_.velocity;
+                velocity.y += extraFallingGravity_;
+            }
+        }
 
         if (YoyoInput() && !yoyoing_ && !midAirShot) {
             AudioController.PlayYoyo();
@@ -91,6 +110,7 @@ public class PlayerController : MonoBehaviour
             animator_.Play("Jump"); 
             AudioController.PlaySFX("sfx_land");                
             midAirShot = false;
+            extraFallingGravity_ = 0.0f;
         } else if (c.gameObject.layer == LayerMask.NameToLayer("Deadzone")) {
             QuitYoyo();
             transform.position = respawn_.position;
