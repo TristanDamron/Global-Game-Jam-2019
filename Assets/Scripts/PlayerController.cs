@@ -8,10 +8,10 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D rb_;        
     [SerializeField]
     private float speed_;
-    [SerializeField]
-    private float jumpTimer_;
-    [SerializeField]
-    private float jumpDuration_;
+    // [SerializeField]
+    // private float jumpTimer_;
+    // [SerializeField]
+    // private float jumpDuration_;
     [SerializeField]
     private bool canJump_;
     [SerializeField]
@@ -26,6 +26,11 @@ public class PlayerController : MonoBehaviour
     private Transform respawn_;
     [SerializeField]
     private float jumpSpeed_;
+    [SerializeField]
+    private float lowJumpMultiplier_ = 3.0f;
+    [SerializeField]
+    private float fallMultiplier_ = 1.4f;
+
     private bool midAirShot;
     private ParticleSystem particles_;
     private Animator animator_;
@@ -60,10 +65,20 @@ public class PlayerController : MonoBehaviour
             animator_.Play("Idle");
         }
 
-        if (Input.GetAxis("Jump") != 0) { 
-            if (canJump_)
-                AudioController.PlayJump();    
+
+        //faster falling
+        if (rb_.velocity.y < 0) {
+            rb_.velocity += Vector2.up * Physics.gravity.y * (fallMultiplier_ - 1) * Time.deltaTime;
+        }
+
+        // jump
+        if (Input.GetAxis("Jump") != 0 && canJump_) { 
+            AudioController.PlayJump();    
             Jump(jumpSpeed_);
+        }
+        //control jump height by length of time jump button held
+        if (rb_.velocity.y > 0 && Input.GetAxis("Jump") == 0) {
+            rb_.velocity += Vector2.up * Physics.gravity.y * (lowJumpMultiplier_ - 1) * Time.deltaTime;
         }
 
         // Restrict the upward velocity of the player
@@ -73,6 +88,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
+            /*
             // falling and not yoyoing
             if (!yoyoing_ && rb_.velocity.y < 0.2f)
             {
@@ -84,6 +100,7 @@ public class PlayerController : MonoBehaviour
                 Vector2 velocity = rb_.velocity;
                 velocity.y += extraFallingGravity_;
             }
+            */
         }
 
         if (YoyoInput() && !yoyoing_ && !midAirShot) {
@@ -94,19 +111,23 @@ public class PlayerController : MonoBehaviour
     }
 
     void Jump(float thrust_) {        
-        jumpTimer_++;
+        rb_.velocity = new Vector2(rb_.velocity.x, jumpSpeed_);
+        /*
+        jumpTimer_ += Time.deltaTime;
 
         if (jumpTimer_ < jumpDuration_) {
             Vector3 pos = transform.position;
-            pos.y += thrust_ - jumpTimer_;
-            transform.position = Vector3.Lerp(transform.position, pos, Time.deltaTime);
+            pos.y += (thrust_ - jumpTimer_) * Time.deltaTime;
+            // transform.position = Vector3.Lerp(transform.position, pos, Time.deltaTime);
+            transform.position = pos;
         }
+        */
     }
 
     void OnTriggerEnter2D(Collider2D c) {
         if (c.gameObject.layer == LayerMask.NameToLayer("World")) {
             canJump_ = true;
-            jumpTimer_ = 0f;
+            // jumpTimer_ = 0f;
             animator_.Play("Jump"); 
             AudioController.PlaySFX("sfx_land");                
             midAirShot = false;
