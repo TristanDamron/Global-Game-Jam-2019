@@ -68,7 +68,8 @@ public class MO_Yoyo : MonoBehaviour
                 PullUpdate();
                 break;
             case YoyoState.RELEASE:
-                Release();
+                // Release();
+                player.QuitYoyo();
                 break;
         }
     }
@@ -137,7 +138,7 @@ public class MO_Yoyo : MonoBehaviour
     public void Release()
     {
         lineRenderer.enabled = false;
-        player.QuitYoyo();
+        // player.QuitYoyo();
         target.gameObject.SetActive(true);
         yoyoState = YoyoState.IDLE;
     }
