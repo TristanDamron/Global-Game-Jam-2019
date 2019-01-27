@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float jumpDuration_;
     [SerializeField]
-    private bool jumping_;
+    private bool canJump_;
     [SerializeField]
     private float yVelocityUpperLimit_;
     [SerializeField]
@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     private Transform respawn_;
     [SerializeField]
     private float jumpSpeed_;
+    private bool midAirShot;
     private ParticleSystem particles_;
     private Animator animator_;
     
@@ -38,9 +39,12 @@ public class PlayerController : MonoBehaviour
             Vector3 pos = transform.position;
             pos.x = pos.x + Input.GetAxis("Horizontal") * speed_ * Time.deltaTime;
             transform.position = pos;
-
+            
             animator_.Play("Walk");
-            AudioController.PlayFootsteps();
+            
+            if (canJump_) {
+                AudioController.PlayFootsteps();
+            }
 
             if (Input.GetAxisRaw("Horizontal") == -1) {
                 animator_.gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, -90, 0));
@@ -52,7 +56,8 @@ public class PlayerController : MonoBehaviour
         }
 
         if (Input.GetAxis("Jump") != 0) { 
-            AudioController.PlayJump();    
+            if (canJump_)
+                AudioController.PlayJump();    
             Jump(jumpSpeed_);
         }
 
@@ -62,7 +67,7 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Reached maximum jump height"); 
         }
 
-        if (YoyoInput() && !yoyoing_) {
+        if (YoyoInput() && !yoyoing_ && !midAirShot) {
             AudioController.PlayYoyo();
             LaunchYoyo(); 
             StartCoroutine(EndYoyo());
@@ -79,16 +84,24 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter2D(Collision2D c) {
+    void OnTriggerEnter2D(Collider2D c) {
         if (c.gameObject.layer == LayerMask.NameToLayer("World")) {
-            jumping_ = false;
+            canJump_ = true;
             jumpTimer_ = 0f;
             animator_.Play("Jump"); 
             AudioController.PlaySFX("sfx_land");                
+            midAirShot = false;
         } else if (c.gameObject.layer == LayerMask.NameToLayer("Deadzone")) {
+            QuitYoyo();
             transform.position = respawn_.position;
             AudioController.PlaySpawn();         
             particles_.Play();
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D c) {
+        if (c.gameObject.layer == LayerMask.NameToLayer("World")) {
+            canJump_ = false;
         }
     }
 
@@ -102,6 +115,7 @@ public class PlayerController : MonoBehaviour
     {
         yoyo.Launch();
         yoyoing_ = true;
+        midAirShot = true;
     }    
 
     public void QuitYoyo()
