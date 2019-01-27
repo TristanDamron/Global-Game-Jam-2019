@@ -18,10 +18,14 @@ public class PlayerController : MonoBehaviour
     private float yVelocityUpperLimit_;
     [SerializeField]
     private bool yoyoing_;
+    [SerializeField]
+    private Transform respawn_;
+    private ParticleSystem particles_;
     
 
     void Start() {
         rb_ = GetComponent<Rigidbody2D>();
+        particles_ = GetComponent<ParticleSystem>();
     }
     
     void Update()
@@ -62,6 +66,9 @@ public class PlayerController : MonoBehaviour
         if (c.gameObject.layer == LayerMask.NameToLayer("World")) {
             jumping_ = false;
             jumpTimer_ = 0f;
+        } else if (c.gameObject.layer == LayerMask.NameToLayer("Deadzone")) {
+            transform.position = respawn_.position;
+            particles_.Play();
         }
     }
 

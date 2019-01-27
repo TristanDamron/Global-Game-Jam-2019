@@ -2375,6 +2375,7 @@ MonoBehaviour:
   jumping_: 0
   yVelocityUpperLimit_: 10
   yoyoing_: 0
+  respawn_: {fileID: 0}
 --- !u!50 &1302282937
 Rigidbody2D:
   serializedVersion: 4
@@ -4713,6 +4714,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7472451689950343457, guid: 7deca43e5b7a9174eac215908c80dbf1,
+        type: 3}
+      propertyPath: m_LinearDrag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7472451689950343457, guid: 7deca43e5b7a9174eac215908c80dbf1,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 7472451689950343457, guid: 7deca43e5b7a9174eac215908c80dbf1,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1837163396, guid: 7deca43e5b7a9174eac215908c80dbf1, type: 3}
+      propertyPath: respawn_
+      value: 
+      objectReference: {fileID: 1573755648}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7deca43e5b7a9174eac215908c80dbf1, type: 3}
 --- !u!1 &2069275702
