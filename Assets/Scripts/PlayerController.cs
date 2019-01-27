@@ -23,11 +23,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float jumpSpeed_;
     private ParticleSystem particles_;
+    private Animator animator_;
     
 
     void Start() {
         rb_ = GetComponent<Rigidbody2D>();
         particles_ = GetComponent<ParticleSystem>();
+        animator_ = GetComponentInChildren<Animator>();
     }
     
     void Update()
@@ -36,9 +38,21 @@ public class PlayerController : MonoBehaviour
             Vector3 pos = transform.position;
             pos.x = pos.x + Input.GetAxis("Horizontal") * speed_ * Time.deltaTime;
             transform.position = pos;
+
+            animator_.Play("Walk");
+            AudioController.PlayFootsteps();
+
+            if (Input.GetAxisRaw("Horizontal") == -1) {
+                animator_.gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, -90, 0));
+            } else if (Input.GetAxisRaw("Horizontal") == 1) {
+                animator_.gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, 90, 0));
+            }   
+        } else {
+            animator_.Play("Idle");
         }
 
-        if (Input.GetAxis("Jump") != 0) {
+        if (Input.GetAxis("Jump") != 0) { 
+            AudioController.PlaySFX("sfx_jump");         
             Jump(jumpSpeed_);
         }
 
@@ -54,7 +68,7 @@ public class PlayerController : MonoBehaviour
         } 
     }
 
-    void Jump(float thrust_) {
+    void Jump(float thrust_) {        
         jumpTimer_++;
 
         if (jumpTimer_ < jumpDuration_) {
@@ -68,8 +82,11 @@ public class PlayerController : MonoBehaviour
         if (c.gameObject.layer == LayerMask.NameToLayer("World")) {
             jumping_ = false;
             jumpTimer_ = 0f;
+            animator_.Play("Jump"); 
+            AudioController.PlaySFX("sfx_land");                
         } else if (c.gameObject.layer == LayerMask.NameToLayer("Deadzone")) {
             transform.position = respawn_.position;
+            AudioController.PlaySFX("sfx_spawn");               
             particles_.Play();
         }
     }
