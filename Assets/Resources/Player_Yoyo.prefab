@@ -44,7 +44,7 @@ MonoBehaviour:
   jumpTimer_: 0
   jumpDuration_: 20
   canJump_: 0
-  yVelocityUpperLimit_: 10
+  yVelocityUpperLimit_: 15
   yoyoing_: 0
   respawn_: {fileID: 0}
   jumpSpeed_: 20
@@ -136,8 +136,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 355648209, guid: ce5c80a30dec8004ba186a27f15b2942, type: 3}
+      propertyPath: m_LinearDrag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 355648209, guid: ce5c80a30dec8004ba186a27f15b2942, type: 3}
       propertyPath: m_AngularDrag
-      value: 0.005
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 355648209, guid: ce5c80a30dec8004ba186a27f15b2942, type: 3}
       propertyPath: m_GravityScale
