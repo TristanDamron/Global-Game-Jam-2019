@@ -4813,9 +4813,9 @@ MonoBehaviour:
   extraJumpGravity_: 12
   speed_: 10
   jumpForce_: 14
-  jumping_: 0
   respawnLocation_: {fileID: 0}
   holding_: {fileID: 0}
+  playerState: 0
 --- !u!1001 &734317937450072740
 PrefabInstance:
   m_ObjectHideFlags: 0
