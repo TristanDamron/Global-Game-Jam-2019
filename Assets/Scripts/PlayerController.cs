@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float jumpDuration_;
     [SerializeField]
-    private bool jumping_;
+    private bool canJump_;
     [SerializeField]
     private float yVelocityUpperLimit_;
     [SerializeField]
@@ -38,9 +38,12 @@ public class PlayerController : MonoBehaviour
             Vector3 pos = transform.position;
             pos.x = pos.x + Input.GetAxis("Horizontal") * speed_ * Time.deltaTime;
             transform.position = pos;
-
+            
             animator_.Play("Walk");
-            AudioController.PlayFootsteps();
+            
+            if (canJump_) {
+                AudioController.PlayFootsteps();
+            }
 
             if (Input.GetAxisRaw("Horizontal") == -1) {
                 animator_.gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, -90, 0));
@@ -79,9 +82,9 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter2D(Collision2D c) {
+    void OnTriggerEnter2D(Collider2D c) {
         if (c.gameObject.layer == LayerMask.NameToLayer("World")) {
-            jumping_ = false;
+            canJump_ = true;
             jumpTimer_ = 0f;
             animator_.Play("Jump"); 
             AudioController.PlaySFX("sfx_land");                
@@ -89,6 +92,12 @@ public class PlayerController : MonoBehaviour
             transform.position = respawn_.position;
             AudioController.PlaySpawn();         
             particles_.Play();
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D c) {
+        if (c.gameObject.layer == LayerMask.NameToLayer("World")) {
+            canJump_ = false;
         }
     }
 
