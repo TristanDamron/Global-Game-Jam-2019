@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour
         }
 
         if (Input.GetAxis("Jump") != 0) { 
-            AudioController.PlaySFX("sfx_jump");         
+            AudioController.PlayJump();    
             Jump(jumpSpeed_);
         }
 
@@ -63,6 +63,7 @@ public class PlayerController : MonoBehaviour
         }
 
         if (YoyoInput() && !yoyoing_) {
+            AudioController.PlayYoyo();
             LaunchYoyo(); 
             StartCoroutine(EndYoyo());
         } 
@@ -86,7 +87,7 @@ public class PlayerController : MonoBehaviour
             AudioController.PlaySFX("sfx_land");                
         } else if (c.gameObject.layer == LayerMask.NameToLayer("Deadzone")) {
             transform.position = respawn_.position;
-            AudioController.PlaySFX("sfx_spawn");               
+            AudioController.PlaySpawn();         
             particles_.Play();
         }
     }
