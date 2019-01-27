@@ -8,6 +8,7 @@ public class MO_Yoyo : MonoBehaviour
     public float speed = 1.0f;
     // public float spinSpeed = 10.0f;
     public float maxVelocity = 14f;
+    public float lateralDistance = 0.5f;
     // public float playerPullSpeedInitial = 5.0f;
     public MO_PlayerController player;
     public MO_Yoyo_Target target;
@@ -121,7 +122,7 @@ public class MO_Yoyo : MonoBehaviour
         Vector3 direction = actualTarget - player.transform.position;
         direction = Vector3.Cross(direction, Vector3.forward * spinDirection);
         direction = direction.normalized;
-        actualTarget = transform.position + (direction * playerDistance / 2);
+        actualTarget = transform.position + (direction * playerDistance * lateralDistance);
 
         // always pull player toward us
         // Vector3 forceDirection = transform.position - player.transform.position;
