@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour
     private bool yoyoing_;
     [SerializeField]
     private Transform respawn_;
+    [SerializeField]
+    private float jumpSpeed_;
     private ParticleSystem particles_;
     
 
@@ -37,7 +39,7 @@ public class PlayerController : MonoBehaviour
         }
 
         if (Input.GetAxis("Jump") != 0) {
-            Jump(10);
+            Jump(jumpSpeed_);
         }
 
         // Restrict the upward velocity of the player
@@ -57,8 +59,8 @@ public class PlayerController : MonoBehaviour
 
         if (jumpTimer_ < jumpDuration_) {
             Vector3 pos = transform.position;
-            pos.y += thrust_ * Time.deltaTime;
-            transform.position = pos;
+            pos.y += thrust_ - (jumpDuration_ - jumpTimer_);
+            transform.position = Vector3.Lerp(transform.position, pos, Time.deltaTime);
         }
     }
 
