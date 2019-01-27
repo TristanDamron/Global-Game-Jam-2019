@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3013407557610034354}
   - component: {fileID: 3013407557610034353}
   - component: {fileID: 3013407557610034352}
+  - component: {fileID: 5548072235817439932}
   m_Layer: 0
   m_Name: Bounce Rect
   m_TagString: Untagged
@@ -106,3 +107,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 3}
   m_EdgeRadius: 0
+--- !u!114 &5548072235817439932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3013407557610034359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bd623a0af1ae5b4bbb0e7e0297dd8fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

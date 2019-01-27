@@ -87,8 +87,7 @@ public class AudioController : MonoBehaviour
     public static void PlayBounce() {
         foreach (AudioClip clip in sClips) {
             if (clip.name.Contains("bounce")) {
-                if (!bounceSfx_.isPlaying)
-                    bounceSfx_.PlayOneShot(clip);
+                bounceSfx_.PlayOneShot(clip);
                 break;
             }
         }        
