@@ -148,7 +148,7 @@ public class PlayerController : MonoBehaviour
             midAirShot = false;
             extraFallingGravity_ = 0.0f;
         } else if (c.gameObject.layer == LayerMask.NameToLayer("Deadzone")) {
-            if (!yoyoUsed)
+            if (yoyoUsed)
                 QuitYoyo();
             transform.position = respawn_.position;
             AudioController.PlaySpawn();         
