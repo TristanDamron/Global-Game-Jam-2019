@@ -33,6 +33,8 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField]
     private bool didJump_;
+    [SerializeField]
+    private bool yoyoUsed;
     private bool midAirShot;
     private ParticleSystem particles_;
     private Animator animator_;
@@ -146,7 +148,8 @@ public class PlayerController : MonoBehaviour
             midAirShot = false;
             extraFallingGravity_ = 0.0f;
         } else if (c.gameObject.layer == LayerMask.NameToLayer("Deadzone")) {
-            QuitYoyo();
+            if (!yoyoUsed)
+                QuitYoyo();
             transform.position = respawn_.position;
             AudioController.PlaySpawn();         
             particles_.Play();
