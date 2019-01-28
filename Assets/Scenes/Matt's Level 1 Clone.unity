@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657934, g: 0.4964136, b: 0.5748189, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1050,7 +1050,7 @@ GameObject:
   - component: {fileID: 463719802}
   - component: {fileID: 463719801}
   - component: {fileID: 463719800}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bounce cushion (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1231,7 +1231,7 @@ GameObject:
   - component: {fileID: 502289811}
   - component: {fileID: 502289810}
   - component: {fileID: 502289809}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bounce cushion (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2142,7 +2142,7 @@ GameObject:
   - component: {fileID: 861750716}
   - component: {fileID: 861750715}
   - component: {fileID: 861750714}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bounce cushion (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2219,7 +2219,7 @@ GameObject:
   - component: {fileID: 884418406}
   - component: {fileID: 884418405}
   - component: {fileID: 884418404}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bounce cushion (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2395,7 +2395,7 @@ GameObject:
   - component: {fileID: 1013405887}
   - component: {fileID: 1013405886}
   - component: {fileID: 1013405885}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bounce cushion (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2680,7 +2680,7 @@ GameObject:
   - component: {fileID: 1195317634}
   - component: {fileID: 1195317633}
   - component: {fileID: 1195317632}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bounce cushion (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3025,6 +3025,7 @@ MonoBehaviour:
   jumpSpeed_: 0
   lowJumpMultiplier_: 3
   fallMultiplier_: 1.4
+  didJump_: 0
 --- !u!50 &1302282937
 Rigidbody2D:
   serializedVersion: 4
@@ -3311,7 +3312,7 @@ GameObject:
   - component: {fileID: 1364270583}
   - component: {fileID: 1364270582}
   - component: {fileID: 1364270581}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bounce cushion (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3988,7 +3989,7 @@ GameObject:
   - component: {fileID: 1628481964}
   - component: {fileID: 1628481963}
   - component: {fileID: 1628481962}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bounce cushion (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4670,7 +4671,8 @@ GameObject:
   - component: {fileID: 1792705937}
   - component: {fileID: 1792705936}
   - component: {fileID: 1792705935}
-  m_Layer: 0
+  - component: {fileID: 1792705938}
+  m_Layer: 9
   m_Name: bounce cushion (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4736,6 +4738,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: -94.31799, y: -21.060974, z: 19.159988}
+--- !u!61 &1792705938
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1792705934}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0021675285, y: -0.011508543}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.023086958, y: 0.051048353}
+  m_EdgeRadius: 0
 --- !u!4 &1798494997 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3013407557610034354, guid: 0d5c151c5e1c81943ae43e9b6729f43d,
@@ -5427,6 +5455,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4968532292575203119, guid: ee47bb2683887c04783cc106f5b910d8,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4968532291920501100, guid: ee47bb2683887c04783cc106f5b910d8,
         type: 3}
       propertyPath: clips.Array.size
@@ -5447,11 +5480,6 @@ PrefabInstance:
       propertyPath: clips.Array.data[1]
       value: 
       objectReference: {fileID: 8300000, guid: 6add03b388e7bce42bb811213f8a8c96, type: 3}
-    - target: {fileID: 4968532292575203119, guid: ee47bb2683887c04783cc106f5b910d8,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 484118562, guid: ee47bb2683887c04783cc106f5b910d8, type: 3}
       propertyPath: OutputAudioMixerGroup
       value: 
@@ -5468,6 +5496,12 @@ PrefabInstance:
       propertyPath: OutputAudioMixerGroup
       value: 
       objectReference: {fileID: 243720447376984682, guid: ae7819e1c3772d648a0844569fc4b925,
+        type: 2}
+    - target: {fileID: 3042437903677165440, guid: ee47bb2683887c04783cc106f5b910d8,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 243714133979478330, guid: ae7819e1c3772d648a0844569fc4b925,
         type: 2}
     - target: {fileID: 623212331511447728, guid: ee47bb2683887c04783cc106f5b910d8,
         type: 3}
@@ -5491,12 +5525,6 @@ PrefabInstance:
       propertyPath: m_Volume
       value: 0.493
       objectReference: {fileID: 0}
-    - target: {fileID: 3042437903677165440, guid: ee47bb2683887c04783cc106f5b910d8,
-        type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: 243714133979478330, guid: ae7819e1c3772d648a0844569fc4b925,
-        type: 2}
     - target: {fileID: 8656273830621804475, guid: ee47bb2683887c04783cc106f5b910d8,
         type: 3}
       propertyPath: OutputAudioMixerGroup
@@ -5711,7 +5739,7 @@ GameObject:
   - component: {fileID: 2054895663}
   - component: {fileID: 2054895662}
   - component: {fileID: 2054895661}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bounce cushion (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5788,7 +5816,7 @@ GameObject:
   - component: {fileID: 2066185830}
   - component: {fileID: 2066185829}
   - component: {fileID: 2066185828}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bounce cushion (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

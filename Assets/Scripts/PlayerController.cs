@@ -139,6 +139,7 @@ public class PlayerController : MonoBehaviour
         if (c.gameObject.layer == LayerMask.NameToLayer("World")) {
             canJump_ = true;
             didJump_ = false;
+            Debug.Log("HIT GROUND!");
             // jumpTimer_ = 0f;
             animator_.Play("Jump"); 
             AudioController.PlaySFX("sfx_land");                
