@@ -77,7 +77,7 @@ public class PlayerController : MonoBehaviour
             Jump(jumpSpeed_);
         }
         //control jump height by length of time jump button held
-        if (rb_.velocity.y > 0 && Input.GetAxis("Jump") == 0) {
+        if (!yoyoing_ && rb_.velocity.y > 0 && Input.GetAxis("Jump") == 0) {
             rb_.velocity += Vector2.up * Physics.gravity.y * (lowJumpMultiplier_ - 1) * Time.deltaTime;
         }
 
