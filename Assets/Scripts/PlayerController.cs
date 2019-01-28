@@ -31,6 +31,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float fallMultiplier_ = 1.4f;
 
+    [SerializeField]
+    private bool didJump_;
+    [SerializeField]
+    private bool yoyoUsed;
     private bool midAirShot;
     private ParticleSystem particles_;
     private Animator animator_;
@@ -45,16 +49,23 @@ public class PlayerController : MonoBehaviour
     
     void Update()
     {      
+        if (canJump_)
+            animator_.SetBool("grounded", true);
+        else
+            animator_.SetBool("grounded", false);
         if (Input.GetAxis("Horizontal") != 0f) {
             Vector3 pos = transform.position;
-            pos.x = pos.x + Input.GetAxis("Horizontal") * speed_ * Time.deltaTime;
+            float walkspeed = Input.GetAxis("Horizontal") * speed_ * Time.deltaTime;
+            pos.x += walkspeed;
             transform.position = pos;
             
-            animator_.Play("Walk");
+            // animator_.Play("Walk");
+            animator_.SetFloat("walkspeed", Mathf.Abs(Input.GetAxis("Horizontal")));
             
             if (canJump_) {
                 AudioController.PlayFootsteps();
             }
+            else animator_.SetBool("grounded", false);
 
             if (Input.GetAxisRaw("Horizontal") == -1) {
                 animator_.gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, -90, 0));
@@ -62,7 +73,8 @@ public class PlayerController : MonoBehaviour
                 animator_.gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, 90, 0));
             }   
         } else {
-            animator_.Play("Idle");
+            // animator_.Play("Idle");
+            animator_.SetFloat("walkspeed", 0);
         }
 
 
@@ -74,10 +86,11 @@ public class PlayerController : MonoBehaviour
         // jump
         if (Input.GetAxis("Jump") != 0 && canJump_) { 
             AudioController.PlayJump();    
+            didJump_ = true;
             Jump(jumpSpeed_);
         }
         //control jump height by length of time jump button held
-        if (!yoyoing_ && rb_.velocity.y > 0 && Input.GetAxis("Jump") == 0) {
+        if (didJump_ && !yoyoing_ && rb_.velocity.y > 0 && Input.GetAxis("Jump") == 0) {
             rb_.velocity += Vector2.up * Physics.gravity.y * (lowJumpMultiplier_ - 1) * Time.deltaTime;
         }
 
@@ -127,13 +140,16 @@ public class PlayerController : MonoBehaviour
     void OnTriggerEnter2D(Collider2D c) {
         if (c.gameObject.layer == LayerMask.NameToLayer("World")) {
             canJump_ = true;
+            didJump_ = false;
+            Debug.Log("HIT GROUND!");
             // jumpTimer_ = 0f;
             animator_.Play("Jump"); 
             AudioController.PlaySFX("sfx_land");                
             midAirShot = false;
             extraFallingGravity_ = 0.0f;
         } else if (c.gameObject.layer == LayerMask.NameToLayer("Deadzone")) {
-            QuitYoyo();
+            if (yoyoUsed)
+                QuitYoyo();
             transform.position = respawn_.position;
             AudioController.PlaySpawn();         
             particles_.Play();
