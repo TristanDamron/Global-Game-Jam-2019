@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.41893938, g: 0.4476068, b: 0.46546304, a: 1}
+  m_IndirectSpecularColor: {r: 0.4189391, g: 0.44760686, b: 0.4654631, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -560,19 +560,6 @@ PrefabInstance:
       propertyPath: respawn_
       value: 
       objectReference: {fileID: 1573755648}
-    - target: {fileID: 1837163396, guid: 7deca43e5b7a9174eac215908c80dbf1, type: 3}
-      propertyPath: yVelocityUpperLimit_
-      value: 11.52
-      objectReference: {fileID: 0}
-    - target: {fileID: 1837163396, guid: 7deca43e5b7a9174eac215908c80dbf1, type: 3}
-      propertyPath: jumpSpeed_
-      value: 30.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 2691790267010976339, guid: 7deca43e5b7a9174eac215908c80dbf1,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7deca43e5b7a9174eac215908c80dbf1, type: 3}
 --- !u!1 &133279188
@@ -795,6 +782,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: chair
       objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: d1bf0d2f998b10c4c909284ad5e0029a, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: d1bf0d2f998b10c4c909284ad5e0029a, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: d1bf0d2f998b10c4c909284ad5e0029a, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -842,14 +837,6 @@ PrefabInstance:
     - target: {fileID: 400006, guid: d1bf0d2f998b10c4c909284ad5e0029a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: d1bf0d2f998b10c4c909284ad5e0029a, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: d1bf0d2f998b10c4c909284ad5e0029a, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d1bf0d2f998b10c4c909284ad5e0029a, type: 3}
@@ -5065,12 +5052,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 243720447376984682, guid: ae7819e1c3772d648a0844569fc4b925,
         type: 2}
-    - target: {fileID: 3042437903677165440, guid: ee47bb2683887c04783cc106f5b910d8,
-        type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: 243714133979478330, guid: ae7819e1c3772d648a0844569fc4b925,
-        type: 2}
     - target: {fileID: 5380680845697703314, guid: ee47bb2683887c04783cc106f5b910d8,
         type: 3}
       propertyPath: OutputAudioMixerGroup
@@ -5084,6 +5065,12 @@ PrefabInstance:
       objectReference: {fileID: 243720447376984682, guid: ae7819e1c3772d648a0844569fc4b925,
         type: 2}
     - target: {fileID: 1070691671929157647, guid: ee47bb2683887c04783cc106f5b910d8,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 243714133979478330, guid: ae7819e1c3772d648a0844569fc4b925,
+        type: 2}
+    - target: {fileID: 3042437903677165440, guid: ee47bb2683887c04783cc106f5b910d8,
         type: 3}
       propertyPath: OutputAudioMixerGroup
       value: 
