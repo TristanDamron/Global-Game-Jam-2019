@@ -47,14 +47,18 @@ public class PlayerController : MonoBehaviour
     {      
         if (Input.GetAxis("Horizontal") != 0f) {
             Vector3 pos = transform.position;
-            pos.x = pos.x + Input.GetAxis("Horizontal") * speed_ * Time.deltaTime;
+            float walkspeed = Input.GetAxis("Horizontal") * speed_ * Time.deltaTime;
+            pos.x += walkspeed;
             transform.position = pos;
             
-            animator_.Play("Walk");
+            // animator_.Play("Walk");
+            animator_.SetFloat("walkspeed", walkspeed);
             
             if (canJump_) {
+                animator_.SetBool("grounded", true);
                 AudioController.PlayFootsteps();
             }
+            else animator_.SetBool("grounded", false);
 
             if (Input.GetAxisRaw("Horizontal") == -1) {
                 animator_.gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, -90, 0));
@@ -62,7 +66,8 @@ public class PlayerController : MonoBehaviour
                 animator_.gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, 90, 0));
             }   
         } else {
-            animator_.Play("Idle");
+            // animator_.Play("Idle");
+            animator_.SetFloat("walkspeed", 0);
         }
 
 
