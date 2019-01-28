@@ -31,6 +31,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float fallMultiplier_ = 1.4f;
 
+    [SerializeField]
+    private bool didJump_;
     private bool midAirShot;
     private ParticleSystem particles_;
     private Animator animator_;
@@ -45,6 +47,10 @@ public class PlayerController : MonoBehaviour
     
     void Update()
     {      
+        if (canJump_)
+            animator_.SetBool("grounded", true);
+        else
+            animator_.SetBool("grounded", false);
         if (Input.GetAxis("Horizontal") != 0f) {
             Vector3 pos = transform.position;
             float walkspeed = Input.GetAxis("Horizontal") * speed_ * Time.deltaTime;
@@ -52,10 +58,9 @@ public class PlayerController : MonoBehaviour
             transform.position = pos;
             
             // animator_.Play("Walk");
-            animator_.SetFloat("walkspeed", walkspeed);
+            animator_.SetFloat("walkspeed", Mathf.Abs(Input.GetAxis("Horizontal")));
             
             if (canJump_) {
-                animator_.SetBool("grounded", true);
                 AudioController.PlayFootsteps();
             }
             else animator_.SetBool("grounded", false);
@@ -79,10 +84,11 @@ public class PlayerController : MonoBehaviour
         // jump
         if (Input.GetAxis("Jump") != 0 && canJump_) { 
             AudioController.PlayJump();    
+            didJump_ = true;
             Jump(jumpSpeed_);
         }
         //control jump height by length of time jump button held
-        if (!yoyoing_ && rb_.velocity.y > 0 && Input.GetAxis("Jump") == 0) {
+        if (didJump_ && !yoyoing_ && rb_.velocity.y > 0 && Input.GetAxis("Jump") == 0) {
             rb_.velocity += Vector2.up * Physics.gravity.y * (lowJumpMultiplier_ - 1) * Time.deltaTime;
         }
 
@@ -132,6 +138,7 @@ public class PlayerController : MonoBehaviour
     void OnTriggerEnter2D(Collider2D c) {
         if (c.gameObject.layer == LayerMask.NameToLayer("World")) {
             canJump_ = true;
+            didJump_ = false;
             // jumpTimer_ = 0f;
             animator_.Play("Jump"); 
             AudioController.PlaySFX("sfx_land");                
