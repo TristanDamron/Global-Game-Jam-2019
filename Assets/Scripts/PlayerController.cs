@@ -165,6 +165,7 @@ public class PlayerController : MonoBehaviour
     bool YoyoInput()
     {
         if (!yoyo) return false;
+        if (!yoyo.isActiveAndEnabled) return false;
         return (Input.GetMouseButtonDown(0) || Input.GetAxisRaw("Yoyo") != 0f);
     }
 
