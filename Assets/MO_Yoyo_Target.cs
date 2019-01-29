@@ -21,7 +21,7 @@ public class MO_Yoyo_Target : MonoBehaviour
         Vector3 goalPosition = transform.position;        
 
         // Only ray cast the mouse position if the joystick is not connected
-        Debug.Log(Input.GetJoystickNames().Length);
+        // Debug.Log(Input.GetJoystickNames().Length);
         if (Input.GetJoystickNames().Length == 0) {
             Ray ray;            
             ray = Camera.main.ScreenPointToRay(Input.mousePosition);

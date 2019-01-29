@@ -53,6 +53,7 @@ public class PlayerController : MonoBehaviour
             animator_.SetBool("grounded", true);
         else
             animator_.SetBool("grounded", false);
+            
         if (Input.GetAxis("Horizontal") != 0f) {
             Vector3 pos = transform.position;
             float walkspeed = Input.GetAxis("Horizontal") * speed_ * Time.deltaTime;
@@ -143,7 +144,7 @@ public class PlayerController : MonoBehaviour
             didJump_ = false;
             Debug.Log("HIT GROUND!");
             // jumpTimer_ = 0f;
-            animator_.Play("Jump"); 
+            // animator_.Play("Jump"); 
             AudioController.PlaySFX("sfx_land");                
             midAirShot = false;
             extraFallingGravity_ = 0.0f;
