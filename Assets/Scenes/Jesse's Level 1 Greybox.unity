@@ -715,6 +715,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pushable Cube
       objectReference: {fileID: 0}
+    - target: {fileID: 5435338288807331119, guid: 89a635f4fa11f794a8dd739d055eb9df,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5435338288807331108, guid: 89a635f4fa11f794a8dd739d055eb9df,
         type: 3}
       propertyPath: m_LocalPosition.x
