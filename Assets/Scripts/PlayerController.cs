@@ -172,6 +172,7 @@ public class PlayerController : MonoBehaviour
     {
         yoyo.Launch();
         yoyoing_ = true;
+        animator_.SetBool("yoyo", yoyoing_);
         midAirShot = true;
     }    
 
@@ -179,6 +180,7 @@ public class PlayerController : MonoBehaviour
     {
         yoyo.Release();
         yoyoing_ = false;
+        animator_.SetBool("yoyo", yoyoing_);
     }
 
     IEnumerator EndYoyo() {
