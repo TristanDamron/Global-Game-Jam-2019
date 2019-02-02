@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D rb_;        
     [SerializeField]
     private float speed_;
+    [SerializeField]
+    private float yoyoReleaseTime_;
     // [SerializeField]
     // private float jumpTimer_;
     // [SerializeField]
@@ -184,7 +186,7 @@ public class PlayerController : MonoBehaviour
     }
 
     IEnumerator EndYoyo() {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(yoyoReleaseTime_);
         QuitYoyo();
     }
 }

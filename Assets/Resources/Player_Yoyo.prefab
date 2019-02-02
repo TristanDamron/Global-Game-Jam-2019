@@ -5218,6 +5218,7 @@ MonoBehaviour:
   yoyo: {fileID: 2691790267010976341}
   rb_: {fileID: 0}
   speed_: 7
+  yoyoReleaseTime_: 0.5
   canJump_: 0
   yVelocityUpperLimit_: 15
   extraFallingGravityRate_: 1
