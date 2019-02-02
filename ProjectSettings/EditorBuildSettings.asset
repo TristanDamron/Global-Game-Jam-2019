@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Jesse's Level 1 Greybox.unity
     guid: 984e8e44f8fee4fcc813fca72ff46ede
+  - enabled: 1
+    path: Assets/Scenes/Main Menu.unity
+    guid: 4232e3d1bd0bb4b359eb3ca541288c43
   m_configObjects: {}
