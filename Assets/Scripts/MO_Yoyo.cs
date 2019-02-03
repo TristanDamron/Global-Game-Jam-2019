@@ -35,6 +35,7 @@ public class MO_Yoyo : MonoBehaviour
     public float yoyoGravity = 5.0f;
 
     private Vector3 actualTarget;
+    private ParticleSystem _particles;
 
     public enum YoyoState
     {
@@ -52,6 +53,7 @@ public class MO_Yoyo : MonoBehaviour
         lineRenderer = GetComponent<LineRenderer>();
         lineRenderer.enabled = false;
         target.gameObject.SetActive(true);
+        _particles = GetComponent<ParticleSystem>();
     }
 
     private void Update()
@@ -124,19 +126,24 @@ public class MO_Yoyo : MonoBehaviour
         direction = Vector3.Cross(direction, Vector3.forward * spinDirection);
         direction = direction.normalized;
         actualTarget = transform.position + (direction * playerDistance * lateralDistance);
-
         // always pull player toward us
         // Vector3 forceDirection = transform.position - player.transform.position;
         Debug.DrawLine(actualTarget, transform.position, Color.red);
         Vector3 force = forceDirection.normalized * yoyoGravity;
         Debug.DrawRay(player.transform.position, force, Color.grey);
         player.rb_.AddForce(force);
-        if (player.rb_.velocity.magnitude > maxVelocity)
-            player.rb_.velocity = player.rb_.velocity.normalized * maxVelocity;
+        if (player.rb_.velocity.magnitude > maxVelocity) {
+            player.rb_.velocity = player.rb_.velocity.normalized * maxVelocity;            
+        } else {
+            transform.Rotate(Vector3.up * Time.deltaTime * 100000f);            
+            _particles.Play();                    
+        }
+
     }
 
     public void Release()
     {
+        _particles.Stop();
         lineRenderer.enabled = false;
         // player.QuitYoyo();
         target.gameObject.SetActive(true);
@@ -145,7 +152,7 @@ public class MO_Yoyo : MonoBehaviour
 
     private void Spin()
     {
-        // transform.Rotate(Vector3.forward, spinSpeed * spinDirection * Time.deltaTime);
+        transform.Rotate(Vector3.forward, 1000f * spinDirection * Time.deltaTime);
     }
 
     private void DrawYoyoString()
@@ -153,6 +160,6 @@ public class MO_Yoyo : MonoBehaviour
         if (!lineRenderer.enabled) lineRenderer.enabled = true;
         lineRenderer.positionCount = 2;
         lineRenderer.SetPosition(0, player.transform.position + offsetFromPlayer);
-        lineRenderer.SetPosition(1, transform.position);
+        lineRenderer.SetPosition(1, transform.position);        
     }
 }
