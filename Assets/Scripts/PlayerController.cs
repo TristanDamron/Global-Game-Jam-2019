@@ -118,6 +118,10 @@ public class PlayerController : MonoBehaviour
             */
         }
 
+        if (rb_.velocity.y < 0f) {
+            canJump_ = false;
+        } 
+
         if (YoyoInput() && !yoyoing_ && !midAirShot) {
             AudioController.PlayYoyo();
             LaunchYoyo(); 
@@ -127,6 +131,7 @@ public class PlayerController : MonoBehaviour
 
     void Jump(float thrust_) {        
         rb_.velocity = new Vector2(rb_.velocity.x, jumpSpeed_);
+        canJump_ = false;
         /*
         jumpTimer_ += Time.deltaTime;
 
@@ -159,7 +164,7 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D c) {
         if (c.gameObject.layer == LayerMask.NameToLayer("World")) {
-            canJump_ = false;
+            // canJump_ = false;
         }
     }
 
