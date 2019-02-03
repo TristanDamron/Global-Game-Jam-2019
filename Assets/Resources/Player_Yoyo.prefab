@@ -274,16 +274,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8aa4596c386e0a043b9ff513d1cdc0b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  length: 6
-  speed: 45
-  maxVelocity: 50
-  lateralDistance: 0.5
+  length: 8
+  speed: 60
+  maxVelocity: 75
+  lateralDistance: 0.4
   player: {fileID: 1837163396}
   target: {fileID: 2691790265754393817}
   yoyoSpinTarget: {fileID: 2691790265267840517}
   yoyoState: 3
   actualTargetOffset: 0
-  yoyoGravity: 160
+  yoyoGravity: 180
 --- !u!120 &2691790267010976338
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -478,7 +478,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 1
-  m_AngularDrag: 0.5
+  m_AngularDrag: 0.4
   m_GravityScale: 2
   m_Material: {fileID: 0}
   m_Interpolate: 0
