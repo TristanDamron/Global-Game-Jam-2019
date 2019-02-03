@@ -47,6 +47,7 @@ public class PlayerController : MonoBehaviour
         rb_ = GetComponent<Rigidbody2D>();
         particles_ = GetComponent<ParticleSystem>();
         animator_ = GetComponentInChildren<Animator>();
+        canJump_ = true;
     }
     
     void Update()
@@ -118,9 +119,11 @@ public class PlayerController : MonoBehaviour
             */
         }
 
-        if (rb_.velocity.y < 0f) {
+        if (rb_.velocity.y < 0f || rb_.velocity.y > 0f) {
             canJump_ = false;
-        } 
+        } else {
+            canJump_ = true;
+        }
 
         if (YoyoInput() && !yoyoing_ && !midAirShot) {
             AudioController.PlayYoyo();
