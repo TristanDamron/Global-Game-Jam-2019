@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D rb_;        
     [SerializeField]
     private float speed_;
+    [SerializeField]
+    private float yoyoReleaseTime_;
     // [SerializeField]
     // private float jumpTimer_;
     // [SerializeField]
@@ -45,6 +47,7 @@ public class PlayerController : MonoBehaviour
         rb_ = GetComponent<Rigidbody2D>();
         particles_ = GetComponent<ParticleSystem>();
         animator_ = GetComponentInChildren<Animator>();
+        canJump_ = true;
     }
     
     void Update()
@@ -53,6 +56,7 @@ public class PlayerController : MonoBehaviour
             animator_.SetBool("grounded", true);
         else
             animator_.SetBool("grounded", false);
+            
         if (Input.GetAxis("Horizontal") != 0f) {
             Vector3 pos = transform.position;
             float walkspeed = Input.GetAxis("Horizontal") * speed_ * Time.deltaTime;
@@ -96,8 +100,7 @@ public class PlayerController : MonoBehaviour
 
         // Restrict the upward velocity of the player
         if (rb_.velocity.y >= yVelocityUpperLimit_) {
-            rb_.velocity = new Vector2(rb_.velocity.x, yVelocityUpperLimit_);       
-            Debug.Log("Reached maximum jump height"); 
+            rb_.velocity = new Vector2(rb_.velocity.x, yVelocityUpperLimit_);                   
         }
         else
         {
@@ -116,6 +119,12 @@ public class PlayerController : MonoBehaviour
             */
         }
 
+        if (rb_.velocity.y < 0f || rb_.velocity.y > 0f) {
+            canJump_ = false;
+        } else {
+            canJump_ = true;
+        }
+
         if (YoyoInput() && !yoyoing_ && !midAirShot) {
             AudioController.PlayYoyo();
             LaunchYoyo(); 
@@ -125,6 +134,7 @@ public class PlayerController : MonoBehaviour
 
     void Jump(float thrust_) {        
         rb_.velocity = new Vector2(rb_.velocity.x, jumpSpeed_);
+        canJump_ = false;
         /*
         jumpTimer_ += Time.deltaTime;
 
@@ -141,9 +151,8 @@ public class PlayerController : MonoBehaviour
         if (c.gameObject.layer == LayerMask.NameToLayer("World")) {
             canJump_ = true;
             didJump_ = false;
-            Debug.Log("HIT GROUND!");
             // jumpTimer_ = 0f;
-            animator_.Play("Jump"); 
+            // animator_.Play("Jump"); 
             AudioController.PlaySFX("sfx_land");                
             midAirShot = false;
             extraFallingGravity_ = 0.0f;
@@ -158,13 +167,14 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D c) {
         if (c.gameObject.layer == LayerMask.NameToLayer("World")) {
-            canJump_ = false;
+            // canJump_ = false;
         }
     }
 
     bool YoyoInput()
     {
         if (!yoyo) return false;
+        if (!yoyo.isActiveAndEnabled) return false;
         return (Input.GetMouseButtonDown(0) || Input.GetAxisRaw("Yoyo") != 0f);
     }
 
@@ -172,6 +182,7 @@ public class PlayerController : MonoBehaviour
     {
         yoyo.Launch();
         yoyoing_ = true;
+        animator_.SetBool("yoyo", yoyoing_);
         midAirShot = true;
     }    
 
@@ -179,10 +190,11 @@ public class PlayerController : MonoBehaviour
     {
         yoyo.Release();
         yoyoing_ = false;
+        animator_.SetBool("yoyo", yoyoing_);
     }
 
     IEnumerator EndYoyo() {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(yoyoReleaseTime_);
         QuitYoyo();
     }
 }
