@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43793222, g: 0.4858808, b: 0.5661582, a: 1}
+  m_IndirectSpecularColor: {r: 0.43793213, g: 0.48588067, b: 0.5661579, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -843,6 +843,95 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1078360990}
   m_CullTransparentMesh: 0
+--- !u!1001 &1226922994
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4968532291920501102, guid: ee47bb2683887c04783cc106f5b910d8,
+        type: 3}
+      propertyPath: m_Name
+      value: Audio
+      objectReference: {fileID: 0}
+    - target: {fileID: 4968532291920501103, guid: ee47bb2683887c04783cc106f5b910d8,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.2262801
+      objectReference: {fileID: 0}
+    - target: {fileID: 4968532291920501103, guid: ee47bb2683887c04783cc106f5b910d8,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.983071
+      objectReference: {fileID: 0}
+    - target: {fileID: 4968532291920501103, guid: ee47bb2683887c04783cc106f5b910d8,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.19140625
+      objectReference: {fileID: 0}
+    - target: {fileID: 4968532291920501103, guid: ee47bb2683887c04783cc106f5b910d8,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4968532291920501103, guid: ee47bb2683887c04783cc106f5b910d8,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4968532291920501103, guid: ee47bb2683887c04783cc106f5b910d8,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4968532291920501103, guid: ee47bb2683887c04783cc106f5b910d8,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4968532291920501103, guid: ee47bb2683887c04783cc106f5b910d8,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4968532291920501103, guid: ee47bb2683887c04783cc106f5b910d8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4968532291920501103, guid: ee47bb2683887c04783cc106f5b910d8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4968532291920501103, guid: ee47bb2683887c04783cc106f5b910d8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4968532291920501100, guid: ee47bb2683887c04783cc106f5b910d8,
+        type: 3}
+      propertyPath: clips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 6add03b388e7bce42bb811213f8a8c96, type: 3}
+    - target: {fileID: 4968532291920501100, guid: ee47bb2683887c04783cc106f5b910d8,
+        type: 3}
+      propertyPath: clips.Array.data[5]
+      value: 
+      objectReference: {fileID: 8300000, guid: 842fa12790000894f9d1084a25f51323, type: 3}
+    - target: {fileID: 4968532292575203119, guid: ee47bb2683887c04783cc106f5b910d8,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4968532292575203119, guid: ee47bb2683887c04783cc106f5b910d8,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 3f93eda752afaa0448c4352b3a20bb02, type: 3}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ee47bb2683887c04783cc106f5b910d8, type: 3}
 --- !u!1 &1309656115
 GameObject:
   m_ObjectHideFlags: 0
