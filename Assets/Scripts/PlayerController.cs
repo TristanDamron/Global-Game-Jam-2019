@@ -27,6 +27,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private Transform respawn_;
     [SerializeField]
+    private Transform checkpoint1_;
+    [SerializeField]
+    private Transform checkpoint2_;
+    [SerializeField]
     private float jumpSpeed_;
     [SerializeField]
     private float lowJumpMultiplier_ = 3.0f;
@@ -161,6 +165,20 @@ public class PlayerController : MonoBehaviour
                 QuitYoyo();
             transform.position = respawn_.position;
             AudioController.PlaySpawn();         
+            particles_.Play();
+        } else if (c.gameObject.layer == LayerMask.NameToLayer("Deadzone2")) {
+            if (yoyoUsed)
+                QuitYoyo();
+            transform.position = checkpoint1_.position;
+            AudioController.PlaySpawn();
+            particles_.Play();
+        }
+        else if (c.gameObject.layer == LayerMask.NameToLayer("Deadzone3"))
+        {
+            if (yoyoUsed)
+                QuitYoyo();
+            transform.position = checkpoint2_.position;
+            AudioController.PlaySpawn();
             particles_.Play();
         }
     }
