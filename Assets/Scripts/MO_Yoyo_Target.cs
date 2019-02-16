@@ -6,8 +6,8 @@ public class MO_Yoyo_Target : MonoBehaviour
 {
     [System.NonSerialized]
     public float lengthToTarget = 5.0f;
-    [SerializeField]
-    private float targetSpeed_;
+    // [SerializeField]
+    // private float targetSpeed_;
     private Transform target_;
 
 
@@ -34,12 +34,18 @@ public class MO_Yoyo_Target : MonoBehaviour
             goalPosition = new Vector3(target_.position.x + Input.GetAxisRaw("Yoyo Aim Horizontal"), target_.position.y - Input.GetAxisRaw("Yoyo Aim Vertical"), target_.position.z);
         }
 
+        goalPosition.z = 0.0f;
         Vector3 parentPosition = transform.parent.transform.position;
+        parentPosition.z = 0.0f;
         Vector3 goalDirection = goalPosition - parentPosition;
-        // Debug.DrawRay(goalPosition, Vector3.up, Color.red);
-        // Debug.DrawRay(parentPosition, Vector3.up, Color.blue);
+        goalDirection.z = 0.0f;
+        Debug.DrawRay(goalPosition, Vector3.up, Color.red);
+        Debug.DrawRay(parentPosition, Vector3.up, Color.blue);
         Debug.DrawRay(parentPosition, goalDirection, Color.grey);
         Debug.DrawRay(parentPosition, goalDirection.normalized * lengthToTarget);
-        transform.position = parentPosition + goalDirection.normalized * lengthToTarget;
+        Vector3 position = parentPosition + goalDirection.normalized * lengthToTarget;
+        position.z = 0.0f;
+        transform.position = position;
+        transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
     }
 }

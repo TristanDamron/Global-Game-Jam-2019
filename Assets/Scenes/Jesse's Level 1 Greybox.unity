@@ -1216,16 +1216,6 @@ PrefabInstance:
       propertyPath: respawn_
       value: 
       objectReference: {fileID: 1573755648}
-    - target: {fileID: 2691790267010976339, guid: 7deca43e5b7a9174eac215908c80dbf1,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3082329474924714309, guid: 7deca43e5b7a9174eac215908c80dbf1,
-        type: 3}
-      propertyPath: audio
-      value: 
-      objectReference: {fileID: 523249416}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7deca43e5b7a9174eac215908c80dbf1, type: 3}
 --- !u!1 &131640041
@@ -4410,12 +4400,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519434263}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!82 &523249416 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 729546795, guid: ee47bb2683887c04783cc106f5b910d8,
-    type: 3}
-  m_PrefabInstance: {fileID: 1988964311}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &530630933
 GameObject:
   m_ObjectHideFlags: 0
@@ -4903,6 +4887,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Pause Menu Controller
+      objectReference: {fileID: 0}
+    - target: {fileID: 3945757199409572731, guid: 8fcbdbd84e9ed4abfa8b7c0e9fe0a424,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3945757199409572672, guid: 8fcbdbd84e9ed4abfa8b7c0e9fe0a424,
         type: 3}
@@ -6451,7 +6440,7 @@ PrefabInstance:
     - target: {fileID: 1212963887984808149, guid: 1183207f453a34025a16fc62237de7f2,
         type: 3}
       propertyPath: nextLevelName
-      value: Credits
+      value: Jesse's Level 2 Greybox
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1183207f453a34025a16fc62237de7f2, type: 3}
@@ -12527,6 +12516,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wood Paneling (40)
       objectReference: {fileID: 0}
+    - target: {fileID: 1178052051351981263, guid: 38f2b2b61cea048f28c89146a2323315,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 7235317493059463665, guid: 38f2b2b61cea048f28c89146a2323315,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -18555,6 +18549,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2069275703}
     m_Modifications:
+    - target: {fileID: 6908353879666493633, guid: 8671b124478fc411ca3d0dbdaca7175d,
+        type: 3}
+      propertyPath: m_Name
+      value: Platform
+      objectReference: {fileID: 0}
     - target: {fileID: 6908353879666493634, guid: 8671b124478fc411ca3d0dbdaca7175d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -18609,11 +18608,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6908353879666493633, guid: 8671b124478fc411ca3d0dbdaca7175d,
-        type: 3}
-      propertyPath: m_Name
-      value: Platform
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8671b124478fc411ca3d0dbdaca7175d, type: 3}

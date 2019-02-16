@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float yVelocityUpperLimit_;
     [SerializeField]
+    private float xVelocityUpperLimit_ = 10.0f;
+    [SerializeField]
     private float extraFallingGravityRate_ = 1.0f;
     [SerializeField]
     private float extraFallingGravityMax_ = 10.0f;
@@ -106,6 +108,15 @@ public class PlayerController : MonoBehaviour
         if (rb_.velocity.y >= yVelocityUpperLimit_) {
             rb_.velocity = new Vector2(rb_.velocity.x, yVelocityUpperLimit_);                   
         }
+
+
+        if (yoyoing_ && rb_.velocity.x >= xVelocityUpperLimit_) {
+            rb_.velocity = new Vector2(xVelocityUpperLimit_, rb_.velocity.y);                   
+        }
+        if (yoyoing_ && rb_.velocity.x <= -xVelocityUpperLimit_) {
+            rb_.velocity = new Vector2(-xVelocityUpperLimit_, rb_.velocity.y);                   
+        }
+
         else
         {
             /*
@@ -152,6 +163,7 @@ public class PlayerController : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D c) {
+        // wall/floor
         if (c.gameObject.layer == LayerMask.NameToLayer("World")) {
             canJump_ = true;
             didJump_ = false;
@@ -160,12 +172,14 @@ public class PlayerController : MonoBehaviour
             AudioController.PlaySFX("sfx_land");                
             midAirShot = false;
             extraFallingGravity_ = 0.0f;
+        // kill zone
         } else if (c.gameObject.layer == LayerMask.NameToLayer("Deadzone")) {
             if (yoyoUsed)
                 QuitYoyo();
             transform.position = respawn_.position;
             AudioController.PlaySpawn();         
             particles_.Play();
+        // checkpoint killzone
         } else if (c.gameObject.layer == LayerMask.NameToLayer("Deadzone2")) {
             if (yoyoUsed)
                 QuitYoyo();
@@ -173,6 +187,7 @@ public class PlayerController : MonoBehaviour
             AudioController.PlaySpawn();
             particles_.Play();
         }
+        // checkpoint killzone
         else if (c.gameObject.layer == LayerMask.NameToLayer("Deadzone3"))
         {
             if (yoyoUsed)
@@ -184,9 +199,9 @@ public class PlayerController : MonoBehaviour
     }
 
     void OnTriggerExit2D(Collider2D c) {
-        if (c.gameObject.layer == LayerMask.NameToLayer("World")) {
+        // if (c.gameObject.layer == LayerMask.NameToLayer("World")) {
             // canJump_ = false;
-        }
+        // }
     }
 
     bool YoyoInput()
