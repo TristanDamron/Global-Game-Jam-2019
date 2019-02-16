@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37183177, g: 0.37895283, b: 0.35611126, a: 1}
+  m_IndirectSpecularColor: {r: 0.37183192, g: 0.37895322, b: 0.35611153, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -10962,6 +10962,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -5.7
       objectReference: {fileID: 0}
+    - target: {fileID: 1236914458375550074, guid: 46813698592c9d6469d161bdeff1ddac,
+        type: 3}
+      propertyPath: orthographic size
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46813698592c9d6469d161bdeff1ddac, type: 3}
 --- !u!1001 &998281581
@@ -13060,7 +13065,7 @@ PrefabInstance:
     - target: {fileID: 6908353879666493634, guid: 8671b124478fc411ca3d0dbdaca7175d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -32.05
+      value: -33.2
       objectReference: {fileID: 0}
     - target: {fileID: 6908353879666493634, guid: 8671b124478fc411ca3d0dbdaca7175d,
         type: 3}
@@ -13115,7 +13120,7 @@ PrefabInstance:
     - target: {fileID: 6908353879666493634, guid: 8671b124478fc411ca3d0dbdaca7175d,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 3.8629367
+      value: 6.372035
       objectReference: {fileID: 0}
     - target: {fileID: 6908353879666493635, guid: 8671b124478fc411ca3d0dbdaca7175d,
         type: 3}
@@ -22854,6 +22859,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428454123601223198, guid: b35c2fb805d0b4c98946555f2b7b9fc3,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428454123601223198, guid: b35c2fb805d0b4c98946555f2b7b9fc3,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 0.20639491
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428454123601223198, guid: b35c2fb805d0b4c98946555f2b7b9fc3,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 3.426062
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428454123601223198, guid: b35c2fb805d0b4c98946555f2b7b9fc3,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0.008307576
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428454123601223198, guid: b35c2fb805d0b4c98946555f2b7b9fc3,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.94502497
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b35c2fb805d0b4c98946555f2b7b9fc3, type: 3}
