@@ -71,7 +71,7 @@ public class PlayerController : MonoBehaviour
             animator_.SetFloat("walkspeed", Mathf.Abs(Input.GetAxis("Horizontal")));
             
             if (canJump_) {
-                AudioController.PlayFootsteps();
+                // AudioController.PlayFootsteps();
             }
             else animator_.SetBool("grounded", false);
 

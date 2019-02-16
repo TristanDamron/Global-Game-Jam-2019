@@ -60,8 +60,11 @@ public class AudioController : MonoBehaviour
     }   
 
     public static void PlayFootsteps() {
+        /*
         if (!footstepSfx_.isPlaying)
             footstepSfx_.PlayOneShot(sFootsteps[Random.Range(0, sFootsteps.Count - 1)]);
+            */
+        footstepSfx_.PlayOneShot(sFootsteps[Random.Range(0, sFootsteps.Count - 1)]);
     }       
 
     public static void PlayFire() {
