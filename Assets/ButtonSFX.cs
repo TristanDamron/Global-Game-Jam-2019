@@ -8,11 +8,10 @@ public class ButtonSFX : MonoBehaviour, IPointerEnterHandler, IPointerDownHandle
 {
     public void OnPointerEnter(PointerEventData p)
     {
-        AudioController.PlaySFX("sfx_ui_highlight");
+        DynamicAudioController.Play("sfx_ui_highlight");
     }
-
     public void OnPointerDown(PointerEventData p)
     {
-        AudioController.PlaySFX("sfx_ui_click");
+        DynamicAudioController.Play("sfx_ui_click");
     }
 }

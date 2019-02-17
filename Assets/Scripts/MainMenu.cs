@@ -16,11 +16,9 @@ public class MainMenu : MonoBehaviour
 
         startGame.onClick.AddListener(() => {
             SceneManager.LoadScene(firstLevelName);
-            AudioController.PlaySFX("sfx_ui_click");
         });
         quit.onClick.AddListener(() => {
             Application.Quit();
-            AudioController.PlaySFX("sfx_ui_click");
         });
         
     }

@@ -94,8 +94,9 @@ public class PlayerController : MonoBehaviour
         }
 
         // jump
-        if (Input.GetAxis("Jump") != 0 && canJump_) { 
-            AudioController.PlayJump();    
+        if (Input.GetAxis("Jump") != 0 && canJump_) {
+            // AudioController.PlayJump();    
+            DynamicAudioController.Play("jump");
             didJump_ = true;
             Jump(jumpSpeed_);
         }
@@ -141,7 +142,8 @@ public class PlayerController : MonoBehaviour
         }
 
         if (YoyoInput() && !yoyoing_ && !midAirShot) {
-            AudioController.PlayYoyo();
+            // AudioController.PlayYoyo();
+            DynamicAudioController.PlayYoyo();
             LaunchYoyo(); 
             StartCoroutine(EndYoyo());
         } 
@@ -170,7 +172,8 @@ public class PlayerController : MonoBehaviour
             // jumpTimer_ = 0f;
             // animator_.Play("Jump");
             // AudioController.PlaySFX("sfx_land");
-            AudioController.PlayLand();
+            // AudioController.PlayLand();
+            DynamicAudioController.Play("land");
             midAirShot = false;
             extraFallingGravity_ = 0.0f;
         // kill zone
@@ -178,14 +181,16 @@ public class PlayerController : MonoBehaviour
             if (yoyoUsed)
                 QuitYoyo();
             transform.position = respawn_.position;
-            AudioController.PlaySpawn();         
+            // AudioController.PlaySpawn();         
+            DynamicAudioController.Play("spawn");
             particles_.Play();
         // checkpoint killzone
         } else if (c.gameObject.layer == LayerMask.NameToLayer("Deadzone2")) {
             if (yoyoUsed)
                 QuitYoyo();
             transform.position = checkpoint1_.position;
-            AudioController.PlaySpawn();
+            // AudioController.PlaySpawn();
+            DynamicAudioController.Play("spawn");
             particles_.Play();
         }
         // checkpoint killzone
@@ -194,7 +199,8 @@ public class PlayerController : MonoBehaviour
             if (yoyoUsed)
                 QuitYoyo();
             transform.position = checkpoint2_.position;
-            AudioController.PlaySpawn();
+            // AudioController.PlaySpawn();
+            DynamicAudioController.Play("spawn");
             particles_.Play();
         }
     }

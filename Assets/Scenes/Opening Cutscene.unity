@@ -179,6 +179,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4968532291920501100, guid: ee47bb2683887c04783cc106f5b910d8,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee47bb2683887c04783cc106f5b910d8, type: 3}
 --- !u!1001 &749781208
@@ -251,7 +256,7 @@ PrefabInstance:
     - target: {fileID: 1212963887984808149, guid: 1183207f453a34025a16fc62237de7f2,
         type: 3}
       propertyPath: nextLevelName
-      value: Jesse's Level 1 Greybox
+      value: Level 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1183207f453a34025a16fc62237de7f2, type: 3}

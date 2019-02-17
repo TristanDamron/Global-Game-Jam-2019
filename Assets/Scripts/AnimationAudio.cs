@@ -9,7 +9,8 @@ public class AnimationAudio : MonoBehaviour {
 
     public void PlayFootstep(float volume)
     {
-        AudioController.PlayFootsteps();
+        //AudioController.PlayFootsteps();
+        DynamicAudioController.PlayFootstep();
     }
 
 }
