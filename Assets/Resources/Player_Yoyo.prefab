@@ -70,7 +70,7 @@ Transform:
   m_GameObject: {fileID: 2691790265754393814}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.02, y: 0.02, z: 0.02}
   m_Children: []
   m_Father: {fileID: 2691790267010976340}
   m_RootOrder: 0
@@ -112,7 +112,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: c56f54a0f933fe4499af1f635ddfc022, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -135,7 +135,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44dff37472be9c049ac65905a5631583, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetSpeed_: 2
 --- !u!1 &2691790266676725292
 GameObject:
   m_ObjectHideFlags: 0
@@ -246,7 +245,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2691790267010976340
 Transform:
   m_ObjectHideFlags: 0
@@ -255,7 +254,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2691790267010976339}
   m_LocalRotation: {x: 0.027008533, y: -0.044612035, z: -0.6745732, w: -0.73636365}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.506, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2691790265754393819}
@@ -278,7 +277,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   length: 8
   speed: 60
-  maxVelocity: 75
+  maxVelocity: 15
   lateralDistance: 0.4
   player: {fileID: 1837163396}
   target: {fileID: 2691790265754393817}
@@ -324,8 +323,8 @@ LineRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Positions:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 1}
+  - {x: -4.399783, y: -6.6548862, z: -2.724125}
+  - {x: -4.36545, y: -6.3285694, z: -3.289319}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -334,7 +333,7 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.09523773
+        value: 0.045951843
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -9888,6 +9887,7 @@ MonoBehaviour:
   yoyoReleaseTime_: 0.5
   canJump_: 0
   yVelocityUpperLimit_: 15
+  xVelocityUpperLimit_: 10
   extraFallingGravityRate_: 1
   extraFallingGravityMax_: 10
   yoyoing_: 0

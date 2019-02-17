@@ -168,8 +168,9 @@ public class PlayerController : MonoBehaviour
             canJump_ = true;
             didJump_ = false;
             // jumpTimer_ = 0f;
-            // animator_.Play("Jump"); 
-            AudioController.PlaySFX("sfx_land");                
+            // animator_.Play("Jump");
+            // AudioController.PlaySFX("sfx_land");
+            AudioController.PlayLand();
             midAirShot = false;
             extraFallingGravity_ = 0.0f;
         // kill zone

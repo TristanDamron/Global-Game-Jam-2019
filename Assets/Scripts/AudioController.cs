@@ -17,6 +17,7 @@ public class AudioController : MonoBehaviour
     private static AudioSource fireSfx_;
     private static AudioSource jumpSfx_;
     private static AudioSource bounceSfx_;
+    private static AudioSource landSfx_;
     private static AudioSource deathSfx_;
     private static AudioSource spawnSfx_;
 
@@ -27,6 +28,7 @@ public class AudioController : MonoBehaviour
         fireSfx_ = GameObject.Find("Fire SFX").GetComponent<AudioSource>();
         jumpSfx_ = GameObject.Find("Jump SFX").GetComponent<AudioSource>();
         bounceSfx_ = GameObject.Find("Bounce SFX").GetComponent<AudioSource>();
+        landSfx_ = GameObject.Find("Land SFX").GetComponent<AudioSource>();
         deathSfx_ = GameObject.Find("Death SFX").GetComponent<AudioSource>();
         spawnSfx_ = GameObject.Find("Spawn SFX").GetComponent<AudioSource>();
 
@@ -47,12 +49,15 @@ public class AudioController : MonoBehaviour
     public static void PlaySFX(string name) {
         foreach (AudioClip clip in sClips) {
             if (clip.name == name) {
-                if (!sfx_.isPlaying)   
+                if (sfx_.isPlaying) return;
+                else {
                     sfx_.PlayOneShot(clip);
-                break;
+                    return;
+                }
             }
-        }        
-    } 
+        }
+        Debug.LogError("Sound Effect '" + name + "' not found.");
+    }
 
     public static void PlayYoyo() {
         if (!yoyoSfx_.isPlaying)
@@ -82,6 +87,16 @@ public class AudioController : MonoBehaviour
             if (clip.name.Contains("jump")) {
                 if (!jumpSfx_.isPlaying)
                     jumpSfx_.PlayOneShot(clip);
+                break;
+            }
+        }        
+    }
+
+    public static void PlayLand() {
+        foreach (AudioClip clip in sClips) {
+            if (clip.name.Contains("land")) {
+                if (!landSfx_.isPlaying)
+                    landSfx_.PlayOneShot(clip);
                 break;
             }
         }        
