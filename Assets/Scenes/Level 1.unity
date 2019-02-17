@@ -1221,6 +1221,11 @@ PrefabInstance:
       propertyPath: respawn_
       value: 
       objectReference: {fileID: 1573755648}
+    - target: {fileID: 2691790267010976339, guid: 7deca43e5b7a9174eac215908c80dbf1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7deca43e5b7a9174eac215908c80dbf1, type: 3}
 --- !u!1 &131640041
@@ -6425,7 +6430,7 @@ PrefabInstance:
     - target: {fileID: 1212963887984808149, guid: 1183207f453a34025a16fc62237de7f2,
         type: 3}
       propertyPath: nextLevelName
-      value: Jesse's Level 2 Greybox
+      value: Level 2
       objectReference: {fileID: 0}
     - target: {fileID: 1212963887984808148, guid: 1183207f453a34025a16fc62237de7f2,
         type: 3}
@@ -12829,7 +12834,7 @@ PrefabInstance:
     - target: {fileID: 2169088811040862703, guid: b1ee3606c99af30498ee6ea17d7b3bdb,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 33.54
+      value: 33.111
       objectReference: {fileID: 0}
     - target: {fileID: 2169088811040862703, guid: b1ee3606c99af30498ee6ea17d7b3bdb,
         type: 3}
@@ -12889,7 +12894,7 @@ PrefabInstance:
     - target: {fileID: 2169088811040862703, guid: b1ee3606c99af30498ee6ea17d7b3bdb,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.0160803
+      value: 1.1959265
       objectReference: {fileID: 0}
     - target: {fileID: 2169088811040862698, guid: b1ee3606c99af30498ee6ea17d7b3bdb,
         type: 3}
