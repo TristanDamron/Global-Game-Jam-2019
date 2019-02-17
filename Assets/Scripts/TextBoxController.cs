@@ -42,6 +42,7 @@ public class TextBoxController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Return) ||
             Input.GetKeyDown(KeyCode.Space))
         {
+            DynamicAudioController.Play("click");
             NextButton();
         }
     }

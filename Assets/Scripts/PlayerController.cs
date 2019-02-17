@@ -72,10 +72,11 @@ public class PlayerController : MonoBehaviour
             // animator_.Play("Walk");
             animator_.SetFloat("walkspeed", Mathf.Abs(Input.GetAxis("Horizontal")));
             
-            if (canJump_) {
+            // if (canJump_) {
                 // AudioController.PlayFootsteps();
-            }
-            else animator_.SetBool("grounded", false);
+            // }
+            if (!canJump_)
+                animator_.SetBool("grounded", false);
 
             if (Input.GetAxisRaw("Horizontal") == -1) {
                 animator_.gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, -90, 0));
@@ -94,7 +95,8 @@ public class PlayerController : MonoBehaviour
         }
 
         // jump
-        if (Input.GetAxis("Jump") != 0 && canJump_) {
+        // if (Input.GetAxis("Jump") != 0 && canJump_) {
+        if (Input.GetButtonDown("Jump") && canJump_) {
             // AudioController.PlayJump();    
             DynamicAudioController.Play("jump");
             didJump_ = true;

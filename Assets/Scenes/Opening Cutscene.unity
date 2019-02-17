@@ -112,80 +112,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &117771432
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4968532291920501102, guid: ee47bb2683887c04783cc106f5b910d8,
-        type: 3}
-      propertyPath: m_Name
-      value: Audio
-      objectReference: {fileID: 0}
-    - target: {fileID: 4968532291920501103, guid: ee47bb2683887c04783cc106f5b910d8,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.2262801
-      objectReference: {fileID: 0}
-    - target: {fileID: 4968532291920501103, guid: ee47bb2683887c04783cc106f5b910d8,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 4.983071
-      objectReference: {fileID: 0}
-    - target: {fileID: 4968532291920501103, guid: ee47bb2683887c04783cc106f5b910d8,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.19140625
-      objectReference: {fileID: 0}
-    - target: {fileID: 4968532291920501103, guid: ee47bb2683887c04783cc106f5b910d8,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4968532291920501103, guid: ee47bb2683887c04783cc106f5b910d8,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4968532291920501103, guid: ee47bb2683887c04783cc106f5b910d8,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4968532291920501103, guid: ee47bb2683887c04783cc106f5b910d8,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4968532291920501103, guid: ee47bb2683887c04783cc106f5b910d8,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 4968532291920501103, guid: ee47bb2683887c04783cc106f5b910d8,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4968532291920501103, guid: ee47bb2683887c04783cc106f5b910d8,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4968532291920501103, guid: ee47bb2683887c04783cc106f5b910d8,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4968532291920501100, guid: ee47bb2683887c04783cc106f5b910d8,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: ee47bb2683887c04783cc106f5b910d8, type: 3}
 --- !u!1001 &749781208
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -201,7 +127,7 @@ PrefabInstance:
     - target: {fileID: 1212963887984808145, guid: 1183207f453a34025a16fc62237de7f2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.87
+      value: 9.86
       objectReference: {fileID: 0}
     - target: {fileID: 1212963887984808145, guid: 1183207f453a34025a16fc62237de7f2,
         type: 3}
@@ -330,58 +256,133 @@ PrefabInstance:
     - target: {fileID: 4547237879800692015, guid: 13b6c60c64436434a900d20fd53c98dd,
         type: 3}
       propertyPath: textboxesContents.Array.size
-      value: 7
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4547237879800692015, guid: 13b6c60c64436434a900d20fd53c98dd,
         type: 3}
       propertyPath: textboxesContents.Array.data[0]
-      value: A reflection of a person is found in which they dwell the most. A space
-        for the mind to rest and the body to rejuvenate is a rare and fragile thing.
-        Our homes, our places of rest may disappear on a fateful day that takes that
-        delicate peace from it, from us. Time may not heal a husk of what once was.
+      value: A reflection of a person is found in which they dwell the most.
       objectReference: {fileID: 0}
     - target: {fileID: 4547237879800692015, guid: 13b6c60c64436434a900d20fd53c98dd,
         type: 3}
       propertyPath: textboxesContents.Array.data[1]
-      value: and fragile thing. Our homes, our places of rest may disappear on a fateful
-        day that takes that delicate peace from it, from us. Time may not heal a husk
-        of what once was.
+      value: A space for the mind to rest and the body to rejuvenate is a rare and
+        fragile thing.
       objectReference: {fileID: 0}
     - target: {fileID: 4547237879800692015, guid: 13b6c60c64436434a900d20fd53c98dd,
         type: 3}
       propertyPath: textboxesContents.Array.data[2]
-      value: Time may not heal a husk of what once was.
+      value: Our homes, our places of rest may disappear on a fateful day that takes
+        that delicate peace from it, from us.
       objectReference: {fileID: 0}
     - target: {fileID: 4547237879800692015, guid: 13b6c60c64436434a900d20fd53c98dd,
         type: 3}
       propertyPath: textboxesContents.Array.data[3]
-      value: Each passing day may bring upon tired minds regret of leaving, and longing
-        to return. Memories repeat themselves until a pit
+      value: Time may not heal a husk of what once was.
       objectReference: {fileID: 0}
     - target: {fileID: 4547237879800692015, guid: 13b6c60c64436434a900d20fd53c98dd,
         type: 3}
       propertyPath: textboxesContents.Array.data[4]
-      value: of guilt is felt in the stomach, but at last the first steps toward this
-        old thing called home begin.
+      value: Each passing day may bring upon tired minds regret of leaving, and longing
+        to return.
       objectReference: {fileID: 0}
     - target: {fileID: 4547237879800692015, guid: 13b6c60c64436434a900d20fd53c98dd,
         type: 3}
       propertyPath: textboxesContents.Array.data[5]
-      value: '...'
+      value: Memories repeat themselves until a pit of guilt is felt in the stomach,
       objectReference: {fileID: 0}
     - target: {fileID: 4547237879800692015, guid: 13b6c60c64436434a900d20fd53c98dd,
         type: 3}
       propertyPath: textboxesContents.Array.data[6]
-      value: This boy, Russell, is going home. He expects he will find an empty building,
-        but remnants of his past, of himself, dwell within
+      value: but at last the first steps toward this old thing called home begin
       objectReference: {fileID: 0}
     - target: {fileID: 4547237879800692015, guid: 13b6c60c64436434a900d20fd53c98dd,
         type: 3}
       propertyPath: textboxesContents.Array.data[7]
-      value: 
+      value: '...'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4547237879800692015, guid: 13b6c60c64436434a900d20fd53c98dd,
+        type: 3}
+      propertyPath: textboxesContents.Array.data[8]
+      value: This boy, Russell, is going home.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4547237879800692015, guid: 13b6c60c64436434a900d20fd53c98dd,
+        type: 3}
+      propertyPath: textboxesContents.Array.data[9]
+      value: He expects he will find an empty building, but remnants of his past,
+        of himself, dwell within...
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13b6c60c64436434a900d20fd53c98dd, type: 3}
+--- !u!1001 &939815636
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3473524058817303551, guid: a097b919c43f19b4db33494a34fd1cfc,
+        type: 3}
+      propertyPath: m_Name
+      value: DynamicAudioController
+      objectReference: {fileID: 0}
+    - target: {fileID: 3473524058817303550, guid: a097b919c43f19b4db33494a34fd1cfc,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.2262801
+      objectReference: {fileID: 0}
+    - target: {fileID: 3473524058817303550, guid: a097b919c43f19b4db33494a34fd1cfc,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.983071
+      objectReference: {fileID: 0}
+    - target: {fileID: 3473524058817303550, guid: a097b919c43f19b4db33494a34fd1cfc,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.19140625
+      objectReference: {fileID: 0}
+    - target: {fileID: 3473524058817303550, guid: a097b919c43f19b4db33494a34fd1cfc,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3473524058817303550, guid: a097b919c43f19b4db33494a34fd1cfc,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3473524058817303550, guid: a097b919c43f19b4db33494a34fd1cfc,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3473524058817303550, guid: a097b919c43f19b4db33494a34fd1cfc,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3473524058817303550, guid: a097b919c43f19b4db33494a34fd1cfc,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3473524058817303550, guid: a097b919c43f19b4db33494a34fd1cfc,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3473524058817303550, guid: a097b919c43f19b4db33494a34fd1cfc,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3473524058817303550, guid: a097b919c43f19b4db33494a34fd1cfc,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a097b919c43f19b4db33494a34fd1cfc, type: 3}
 --- !u!1 &1004747962 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100078, guid: 8915590d401be4f8c8651893b9348d50,
@@ -428,7 +429,7 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.39}
   serializedVersion: 2
   m_Radius: 0.5
 --- !u!114 &1004747966
@@ -520,7 +521,7 @@ Transform:
   m_LocalScale: {x: 8.075312, y: 10.4873, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1416066431
 GameObject:
@@ -1614,7 +1615,7 @@ Transform:
   m_Children:
   - {fileID: 1451821453}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1889811124
 GameObject:
@@ -1737,7 +1738,7 @@ Camera:
   far clip plane: 1000
   field of view: 45.2
   orthographic: 1
-  orthographic size: 6.98
+  orthographic size: 7.85
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1761,7 +1762,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1949225984}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalPosition: {x: 0, y: 1, z: -16.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
