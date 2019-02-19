@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7141283564734413852}
   - component: {fileID: 6009652641416085671}
   - component: {fileID: 1678185953891002194}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: back cushion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 1385980603658258566}
   - component: {fileID: 3509009144052371796}
   - component: {fileID: 6111903201318977648}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bounce cushion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -165,7 +165,7 @@ GameObject:
   - component: {fileID: 3461986714992989213}
   - component: {fileID: 3150386075612851599}
   - component: {fileID: 6181699776178327081}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: armchair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -241,7 +241,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3196207689618655487}
   - component: {fileID: 986166443}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: chair-new
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -379,26 +379,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.1524522
       objectReference: {fileID: 0}
-    - target: {fileID: 3013407557610034353, guid: 0d5c151c5e1c81943ae43e9b6729f43d,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 0.7607844
-      objectReference: {fileID: 0}
-    - target: {fileID: 3013407557610034353, guid: 0d5c151c5e1c81943ae43e9b6729f43d,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 0.7607844
-      objectReference: {fileID: 0}
-    - target: {fileID: 3013407557610034353, guid: 0d5c151c5e1c81943ae43e9b6729f43d,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 0.7607844
-      objectReference: {fileID: 0}
-    - target: {fileID: 3013407557610034353, guid: 0d5c151c5e1c81943ae43e9b6729f43d,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3013407557610034352, guid: 0d5c151c5e1c81943ae43e9b6729f43d,
         type: 3}
       propertyPath: m_Offset.x
@@ -418,6 +398,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.y
       value: 0.69769055
+      objectReference: {fileID: 0}
+    - target: {fileID: 3013407557610034353, guid: 0d5c151c5e1c81943ae43e9b6729f43d,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.7607844
+      objectReference: {fileID: 0}
+    - target: {fileID: 3013407557610034353, guid: 0d5c151c5e1c81943ae43e9b6729f43d,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.7607844
+      objectReference: {fileID: 0}
+    - target: {fileID: 3013407557610034353, guid: 0d5c151c5e1c81943ae43e9b6729f43d,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.7607844
+      objectReference: {fileID: 0}
+    - target: {fileID: 3013407557610034353, guid: 0d5c151c5e1c81943ae43e9b6729f43d,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d5c151c5e1c81943ae43e9b6729f43d, type: 3}

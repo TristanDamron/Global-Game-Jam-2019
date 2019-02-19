@@ -10,7 +10,12 @@ PrefabInstance:
     - target: {fileID: 6311759845399539303, guid: b6c1af87807ad994a9a6abafba1fc3d8,
         type: 3}
       propertyPath: m_Name
-      value: chair (facing left)
+      value: chair (facing left) Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 6311759845399539303, guid: b6c1af87807ad994a9a6abafba1fc3d8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3196207689618655487, guid: b6c1af87807ad994a9a6abafba1fc3d8,
         type: 3}
@@ -66,6 +71,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5217967891613877082, guid: b6c1af87807ad994a9a6abafba1fc3d8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3112997641096599520, guid: b6c1af87807ad994a9a6abafba1fc3d8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3972651006388306545, guid: b6c1af87807ad994a9a6abafba1fc3d8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 986166443, guid: b6c1af87807ad994a9a6abafba1fc3d8, type: 3}
       propertyPath: m_Offset.x
