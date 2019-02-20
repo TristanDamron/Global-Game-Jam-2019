@@ -47,6 +47,9 @@ public class PlayerController : MonoBehaviour
     private ParticleSystem particles_;
     private Animator animator_;
 
+    private List<YoyoReset> usedYoyoResets = new List<YoyoReset>();
+
+
     private float extraFallingGravity_ = 0.0f;
 
     void Start() {
@@ -151,6 +154,12 @@ public class PlayerController : MonoBehaviour
         } 
     }
 
+    public void ResetYoyo(YoyoReset yoyoReset)
+    {
+        usedYoyoResets.Add(yoyoReset);
+        midAirShot = false;
+    }
+
     void Jump(float thrust_) {        
         rb_.velocity = new Vector2(rb_.velocity.x, jumpSpeed_);
         canJump_ = false;
@@ -166,6 +175,7 @@ public class PlayerController : MonoBehaviour
         */
     }
 
+
     void OnTriggerEnter2D(Collider2D c) {
         // wall/floor
         if (c.gameObject.layer == LayerMask.NameToLayer("World")) {
@@ -178,6 +188,11 @@ public class PlayerController : MonoBehaviour
             DynamicAudioController.Play("land");
             midAirShot = false;
             extraFallingGravity_ = 0.0f;
+            foreach (YoyoReset reset in usedYoyoResets)
+            {
+                reset.gameObject.SetActive(true);
+                reset.isActive = true;
+            }
         // kill zone
         } else if (c.gameObject.layer == LayerMask.NameToLayer("Deadzone")) {
             if (yoyoUsed)
