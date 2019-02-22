@@ -47,15 +47,15 @@ MonoBehaviour:
   footsteps:
     soundBank:
     - clip: {fileID: 8300000, guid: b242d87ebd8c0544eaef4c2d3f73a092, type: 3}
-      volume: 1
+      volume: 0.5
     - clip: {fileID: 8300000, guid: c6b7c82903279614186e7c85868e59b8, type: 3}
-      volume: 1
+      volume: 0.5
     - clip: {fileID: 8300000, guid: 63a5a031eccb7be4aa8de8d5f01ac281, type: 3}
-      volume: 1
+      volume: 0.5
     - clip: {fileID: 8300000, guid: 4718f4085edb41844a304f025f905b14, type: 3}
-      volume: 1
+      volume: 0.5
     - clip: {fileID: 8300000, guid: 34f7088d73d94cd408196382e224d0b1, type: 3}
-      volume: 1
+      volume: 0.5
   yoyo:
     soundBank:
     - clip: {fileID: 8300000, guid: 048f295a29602e6458228c1368bd1285, type: 3}
@@ -70,21 +70,21 @@ MonoBehaviour:
       volume: 1
   soundLibrary:
   - clip: {fileID: 8300000, guid: 6add03b388e7bce42bb811213f8a8c96, type: 3}
-    volume: 1
+    volume: 0.383
   - clip: {fileID: 8300000, guid: 14c827c4c796d57418e695cfc595734d, type: 3}
     volume: 1
   - clip: {fileID: 8300000, guid: 3a513676c29b75c448218c04a11ed1cb, type: 3}
-    volume: 1
+    volume: 0.422
   - clip: {fileID: 8300000, guid: 3547d6b61a28c7e468990f5fab966f72, type: 3}
-    volume: 1
+    volume: 0.47
   - clip: {fileID: 8300000, guid: 8c0a79c64ce795b43b9ff2a7c09df63f, type: 3}
     volume: 1
   - clip: {fileID: 8300000, guid: 842fa12790000894f9d1084a25f51323, type: 3}
-    volume: 1
+    volume: 0.316
   - clip: {fileID: 8300000, guid: be5ce92b9cb74124187e4156ac63fbea, type: 3}
-    volume: 1
+    volume: 0.255
   - clip: {fileID: 8300000, guid: 023bc5556b1732f4eaf27032266f9906, type: 3}
-    volume: 1
+    volume: 0.191
 --- !u!1 &4941371254593465386
 GameObject:
   m_ObjectHideFlags: 0
@@ -126,7 +126,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 3f93eda752afaa0448c4352b3a20bb02, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 9a5b68ef64e826a4795d34bbf901b079, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
