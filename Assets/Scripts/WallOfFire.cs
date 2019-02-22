@@ -5,7 +5,7 @@ using UnityEngine;
 public class WallOfFire : MonoBehaviour
 {
 
-    [SerializeField] [Range(0.01f, 0.1f)] float fireWallSpeed = 0.01f;
+    [SerializeField] float fireWallSpeed = 0.6f;
 
     // Start is called before the first frame update
     void Start()
@@ -16,6 +16,6 @@ public class WallOfFire : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector2 (transform.position.x + fireWallSpeed, transform.position.y);
+        transform.position = new Vector2 (transform.position.x + (fireWallSpeed * Time.deltaTime), transform.position.y);
     }
 }

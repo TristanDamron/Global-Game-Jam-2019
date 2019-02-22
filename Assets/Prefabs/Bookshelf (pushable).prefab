@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 669704622348956424}
   - component: {fileID: 669704622348956426}
   - component: {fileID: 669704622348956427}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bookshelf (pushable)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,10 +28,12 @@ Transform:
   m_GameObject: {fileID: 669704622348956420}
   m_LocalRotation: {x: 0, y: 0.30070576, z: 0, w: 0.953717}
   m_LocalPosition: {x: 30.86575, y: 13.389519, z: 0}
-  m_LocalScale: {x: 3.2672539, y: 6.44, z: 6.4400024}
+  m_LocalScale: {x: 3.2672539, y: 6.44, z: 6.4400043}
   m_Children:
   - {fileID: 5910834378373249152}
   - {fileID: 5910834377762033186}
+  - {fileID: 6008982416024051340}
+  - {fileID: 5546835548880044701}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 35, z: 0}
@@ -56,7 +58,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.027661085, y: -0.069218665}
+  m_Offset: {x: -0.030712485, y: -0.07832688}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -67,7 +69,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.2059941, y: 0.9281867}
+  m_Size: {x: 1.2262945, y: 0.9232577}
   m_EdgeRadius: 0
 --- !u!50 &669704622348956427
 Rigidbody2D:
@@ -81,7 +83,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 3
+  m_Mass: 5
   m_LinearDrag: 1
   m_AngularDrag: 0
   m_GravityScale: 3
@@ -518,7 +520,7 @@ GameObject:
   - component: {fileID: 2428454123512601781}
   - component: {fileID: 2428454123512601780}
   - component: {fileID: 2428454123512601783}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -622,7 +624,7 @@ GameObject:
   - component: {fileID: 2428454123601223196}
   - component: {fileID: 2428454123601223197}
   - component: {fileID: 2428454123601223198}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wall (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -695,7 +697,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2428454123601223184}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -726,7 +728,7 @@ GameObject:
   - component: {fileID: 8844698836696888502}
   - component: {fileID: 260693591052020082}
   - component: {fileID: 1150762028294892869}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wood Paneling (45)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -817,7 +819,7 @@ GameObject:
   - component: {fileID: 5910834376879978927}
   - component: {fileID: 5910834376879978921}
   - component: {fileID: 5910834376879978926}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Red Book (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -894,7 +896,7 @@ GameObject:
   - component: {fileID: 5910834376909880218}
   - component: {fileID: 5910834376909879910}
   - component: {fileID: 5910834376909879911}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Red Book (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -971,7 +973,7 @@ GameObject:
   - component: {fileID: 5910834376936103654}
   - component: {fileID: 5910834376936103650}
   - component: {fileID: 5910834376936103651}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Green book (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1048,7 +1050,7 @@ GameObject:
   - component: {fileID: 5910834377072810132}
   - component: {fileID: 5910834377072810134}
   - component: {fileID: 5910834377072810135}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Green book (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1125,7 +1127,7 @@ GameObject:
   - component: {fileID: 5910834377139763109}
   - component: {fileID: 5910834377139763111}
   - component: {fileID: 5910834377139763108}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Blue Book (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1202,7 +1204,7 @@ GameObject:
   - component: {fileID: 5910834377152111688}
   - component: {fileID: 5910834377152111690}
   - component: {fileID: 5910834377152111691}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Blue Book (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1279,7 +1281,7 @@ GameObject:
   - component: {fileID: 5910834377158516415}
   - component: {fileID: 5910834377158516409}
   - component: {fileID: 5910834377158516414}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Green book (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1356,7 +1358,7 @@ GameObject:
   - component: {fileID: 5910834377171582322}
   - component: {fileID: 5910834377171582332}
   - component: {fileID: 5910834377171582333}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Green book (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1433,7 +1435,7 @@ GameObject:
   - component: {fileID: 5910834377188196790}
   - component: {fileID: 5910834377188196786}
   - component: {fileID: 5910834377188196787}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Blue Book (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1510,7 +1512,7 @@ GameObject:
   - component: {fileID: 5910834377264801051}
   - component: {fileID: 5910834377264801253}
   - component: {fileID: 5910834377264801050}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Blue Book (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1587,7 +1589,7 @@ GameObject:
   - component: {fileID: 5910834377278033394}
   - component: {fileID: 5910834377278033404}
   - component: {fileID: 5910834377278033405}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Blue Book (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1664,7 +1666,7 @@ GameObject:
   - component: {fileID: 5910834377293220936}
   - component: {fileID: 5910834377293220948}
   - component: {fileID: 5910834377293220949}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Green book (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1741,7 +1743,7 @@ GameObject:
   - component: {fileID: 5910834377315839467}
   - component: {fileID: 5910834377315839477}
   - component: {fileID: 5910834377315839466}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Green book (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1818,7 +1820,7 @@ GameObject:
   - component: {fileID: 5910834377340278077}
   - component: {fileID: 5910834377340278073}
   - component: {fileID: 5910834377340278078}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Red Book (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1895,7 +1897,7 @@ GameObject:
   - component: {fileID: 5910834377377556830}
   - component: {fileID: 5910834377377556824}
   - component: {fileID: 5910834377377556825}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Blue Book (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1972,7 +1974,7 @@ GameObject:
   - component: {fileID: 5910834377401551894}
   - component: {fileID: 5910834377401551888}
   - component: {fileID: 5910834377401551889}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Red Book (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2049,7 +2051,7 @@ GameObject:
   - component: {fileID: 5910834377454752013}
   - component: {fileID: 5910834377454752015}
   - component: {fileID: 5910834377454752012}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Red Book (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2126,7 +2128,7 @@ GameObject:
   - component: {fileID: 5910834377514076965}
   - component: {fileID: 5910834377514076967}
   - component: {fileID: 5910834377514076964}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Blue Book (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2203,7 +2205,7 @@ GameObject:
   - component: {fileID: 5910834377533951143}
   - component: {fileID: 5910834377533951139}
   - component: {fileID: 5910834377533951136}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Green book
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2280,7 +2282,7 @@ GameObject:
   - component: {fileID: 5910834377586231455}
   - component: {fileID: 5910834377586231449}
   - component: {fileID: 5910834377586231454}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Green book (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2357,7 +2359,7 @@ GameObject:
   - component: {fileID: 5910834377691358284}
   - component: {fileID: 5910834377691358286}
   - component: {fileID: 5910834377691358287}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Blue Book (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2434,7 +2436,7 @@ GameObject:
   - component: {fileID: 5910834377718990386}
   - component: {fileID: 5910834377718990398}
   - component: {fileID: 5910834377718990399}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Green book (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2511,7 +2513,7 @@ GameObject:
   - component: {fileID: 5910834377733240455}
   - component: {fileID: 5910834377733240451}
   - component: {fileID: 5910834377733240448}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Red Book (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2588,7 +2590,7 @@ GameObject:
   - component: {fileID: 5910834377748501199}
   - component: {fileID: 5910834377748501193}
   - component: {fileID: 5910834377748501198}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Blue Book (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2663,13 +2665,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5910834377762033186}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Books
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5910834377762033186
 Transform:
   m_ObjectHideFlags: 0
@@ -2741,7 +2743,7 @@ GameObject:
   - component: {fileID: 5910834377852932389}
   - component: {fileID: 5910834377852932391}
   - component: {fileID: 5910834377852932388}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Green book (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2818,7 +2820,7 @@ GameObject:
   - component: {fileID: 5910834377876300987}
   - component: {fileID: 5910834377876300933}
   - component: {fileID: 5910834377876300986}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Green book (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2895,7 +2897,7 @@ GameObject:
   - component: {fileID: 5910834377932910771}
   - component: {fileID: 5910834377932910781}
   - component: {fileID: 5910834377932910770}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Blue Book (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2972,7 +2974,7 @@ GameObject:
   - component: {fileID: 5910834377954832287}
   - component: {fileID: 5910834377954832281}
   - component: {fileID: 5910834377954832286}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Red Book (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3049,7 +3051,7 @@ GameObject:
   - component: {fileID: 5910834378096771730}
   - component: {fileID: 5910834378096771740}
   - component: {fileID: 5910834378096771741}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Red Book (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3126,7 +3128,7 @@ GameObject:
   - component: {fileID: 5910834378261754993}
   - component: {fileID: 5910834378261754995}
   - component: {fileID: 5910834378261754992}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Red Book (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3203,7 +3205,7 @@ GameObject:
   - component: {fileID: 5910834378266947214}
   - component: {fileID: 5910834378266947210}
   - component: {fileID: 5910834378266947211}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Red Book (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3280,7 +3282,7 @@ GameObject:
   - component: {fileID: 5910834378323771377}
   - component: {fileID: 5910834378323771389}
   - component: {fileID: 5910834378323771378}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Blue Book (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3357,7 +3359,7 @@ GameObject:
   - component: {fileID: 5910834378344645599}
   - component: {fileID: 5910834378344645595}
   - component: {fileID: 5910834378344645592}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Blue Book
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3434,7 +3436,7 @@ GameObject:
   - component: {fileID: 5910834378349981379}
   - component: {fileID: 5910834378349981389}
   - component: {fileID: 5910834378349981378}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Red Book (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3509,13 +3511,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5910834378373249152}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sturcture
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5910834378373249152
 Transform:
   m_ObjectHideFlags: 0
@@ -3549,7 +3551,7 @@ GameObject:
   - component: {fileID: 5910834378392996367}
   - component: {fileID: 5910834378392996361}
   - component: {fileID: 5910834378392996366}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Green book (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3626,7 +3628,7 @@ GameObject:
   - component: {fileID: 5910834378425937777}
   - component: {fileID: 5910834378425937779}
   - component: {fileID: 5910834378425937776}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Green book (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3703,7 +3705,7 @@ GameObject:
   - component: {fileID: 5910834378460990791}
   - component: {fileID: 5910834378460990785}
   - component: {fileID: 5910834378460990790}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Red Book (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3780,7 +3782,7 @@ GameObject:
   - component: {fileID: 5910834378522016481}
   - component: {fileID: 5910834378522016483}
   - component: {fileID: 5910834378522016480}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Blue Book (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3857,7 +3859,7 @@ GameObject:
   - component: {fileID: 5910834378585415482}
   - component: {fileID: 5910834378585415428}
   - component: {fileID: 5910834378585415429}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Green book (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3934,7 +3936,7 @@ GameObject:
   - component: {fileID: 5910834378588335938}
   - component: {fileID: 5910834378588335948}
   - component: {fileID: 5910834378588335949}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Red Book (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4011,7 +4013,7 @@ GameObject:
   - component: {fileID: 5910834378633417785}
   - component: {fileID: 5910834378633417787}
   - component: {fileID: 5910834378633417784}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Green book (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4088,7 +4090,7 @@ GameObject:
   - component: {fileID: 5910834378642044068}
   - component: {fileID: 5910834378642044070}
   - component: {fileID: 5910834378642044071}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Green book (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4165,7 +4167,7 @@ GameObject:
   - component: {fileID: 5910834378744996748}
   - component: {fileID: 5910834378744996750}
   - component: {fileID: 5910834378744996751}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Red Book (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4242,7 +4244,7 @@ GameObject:
   - component: {fileID: 5910834378816219186}
   - component: {fileID: 5910834378816219196}
   - component: {fileID: 5910834378816219197}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Red Book (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4319,7 +4321,7 @@ GameObject:
   - component: {fileID: 5910834378842685185}
   - component: {fileID: 5910834378842685187}
   - component: {fileID: 5910834378842685184}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Green book (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4396,7 +4398,7 @@ GameObject:
   - component: {fileID: 5910834378963882775}
   - component: {fileID: 5910834378963882771}
   - component: {fileID: 5910834378963882768}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Red Book
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4566,3 +4568,186 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.5822939, y: 0.892776}
   m_EdgeRadius: 0
+--- !u!1 &9208914484307709320
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5546835548880044701}
+  - component: {fileID: 882715909283542396}
+  - component: {fileID: 5514095566084990548}
+  - component: {fileID: 6776500057034112461}
+  m_Layer: 9
+  m_Name: top
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5546835548880044701
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9208914484307709320}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.03600016, y: 0.4299999, z: 0}
+  m_LocalScale: {x: 0.765169, y: 0.039903797, z: 0.25000003}
+  m_Children: []
+  m_Father: {fileID: 669704622348956431}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &882715909283542396
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9208914484307709320}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &5514095566084990548
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9208914484307709320}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: c66ca3d1581913443ac9d3e16b5c4f66, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!61 &6776500057034112461
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9208914484307709320}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.012971222, y: -0.026383638}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.5822939, y: 0.892776}
+  m_EdgeRadius: 0
+--- !u!1001 &6008982416023651340
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 669704622348956431}
+    m_Modifications:
+    - target: {fileID: 100000, guid: 044e0173d2bb29e46abe1229254571ba, type: 3}
+      propertyPath: m_Name
+      value: book case
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 044e0173d2bb29e46abe1229254571ba, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.037
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 044e0173d2bb29e46abe1229254571ba, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.003063
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 044e0173d2bb29e46abe1229254571ba, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.008
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 044e0173d2bb29e46abe1229254571ba, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 044e0173d2bb29e46abe1229254571ba, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 044e0173d2bb29e46abe1229254571ba, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 044e0173d2bb29e46abe1229254571ba, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 044e0173d2bb29e46abe1229254571ba, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 044e0173d2bb29e46abe1229254571ba, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 044e0173d2bb29e46abe1229254571ba, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 044e0173d2bb29e46abe1229254571ba, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 044e0173d2bb29e46abe1229254571ba, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 25.9167
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 044e0173d2bb29e46abe1229254571ba, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 13.181999
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 044e0173d2bb29e46abe1229254571ba, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 12.6132
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 044e0173d2bb29e46abe1229254571ba, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6e8d1a9e896e8744f9414af9dd805f64, type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 044e0173d2bb29e46abe1229254571ba, type: 3}
+--- !u!4 &6008982416024051340 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400000, guid: 044e0173d2bb29e46abe1229254571ba,
+    type: 3}
+  m_PrefabInstance: {fileID: 6008982416023651340}
+  m_PrefabAsset: {fileID: 0}

@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PauseMenuController : MonoBehaviour
 {
     public GameObject pauseMenu;
+    public Button quit;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,5 +30,8 @@ public class PauseMenuController : MonoBehaviour
                 Time.timeScale = 1;
             }
         }
+        quit.onClick.AddListener(() => {
+            SceneManager.LoadScene("Main Menu");
+        });
     }
 }
