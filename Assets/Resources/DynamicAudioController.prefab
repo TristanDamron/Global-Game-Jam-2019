@@ -85,6 +85,10 @@ MonoBehaviour:
     volume: 0.255
   - clip: {fileID: 8300000, guid: 023bc5556b1732f4eaf27032266f9906, type: 3}
     volume: 0.191
+  - clip: {fileID: 8300000, guid: deb9984fa61832f47901948073237757, type: 3}
+    volume: 1
+  - clip: {fileID: 8300000, guid: 3547d6b61a28c7e468990f5fab966f72, type: 3}
+    volume: 1
 --- !u!1 &4941371254593465386
 GameObject:
   m_ObjectHideFlags: 0

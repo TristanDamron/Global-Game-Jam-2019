@@ -1884,6 +1884,24 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 578611380, guid: 34df89847986226499a64ad1d4c3b28a, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.10957861
+      objectReference: {fileID: 0}
+    - target: {fileID: 578611380, guid: 34df89847986226499a64ad1d4c3b28a, type: 3}
+      propertyPath: m_Size.x
+      value: 5.7674227
+      objectReference: {fileID: 0}
+    - target: {fileID: 2853984598322737842, guid: 34df89847986226499a64ad1d4c3b28a,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0.09657121
+      objectReference: {fileID: 0}
+    - target: {fileID: 2853984598322737842, guid: 34df89847986226499a64ad1d4c3b28a,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 7.9706206
+      objectReference: {fileID: 0}
     - target: {fileID: 4877935755477576034, guid: 34df89847986226499a64ad1d4c3b28a,
         type: 3}
       propertyPath: m_Layer
@@ -1923,24 +1941,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 578611380, guid: 34df89847986226499a64ad1d4c3b28a, type: 3}
-      propertyPath: m_Offset.x
-      value: 0.10957861
-      objectReference: {fileID: 0}
-    - target: {fileID: 578611380, guid: 34df89847986226499a64ad1d4c3b28a, type: 3}
-      propertyPath: m_Size.x
-      value: 5.7674227
-      objectReference: {fileID: 0}
-    - target: {fileID: 2853984598322737842, guid: 34df89847986226499a64ad1d4c3b28a,
-        type: 3}
-      propertyPath: m_Offset.x
-      value: 0.09657121
-      objectReference: {fileID: 0}
-    - target: {fileID: 2853984598322737842, guid: 34df89847986226499a64ad1d4c3b28a,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 7.9706206
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 34df89847986226499a64ad1d4c3b28a, type: 3}
@@ -11527,8 +11527,8 @@ Transform:
   - {fileID: 1240769998}
   - {fileID: 1995514391}
   - {fileID: 491641879}
-  - {fileID: 1724058686}
   - {fileID: 564781898}
+  - {fileID: 1724058686}
   - {fileID: 360961511}
   - {fileID: 808299468}
   - {fileID: 2027685297}
@@ -12877,31 +12877,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8414881835275790974, guid: a097b919c43f19b4db33494a34fd1cfc,
-        type: 3}
-      propertyPath: soundLibrary.Array.size
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8414881835275790974, guid: a097b919c43f19b4db33494a34fd1cfc,
-        type: 3}
-      propertyPath: soundLibrary.Array.data[8].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: deb9984fa61832f47901948073237757, type: 3}
-    - target: {fileID: 8414881835275790974, guid: a097b919c43f19b4db33494a34fd1cfc,
-        type: 3}
-      propertyPath: soundLibrary.Array.data[8].volume
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8414881835275790974, guid: a097b919c43f19b4db33494a34fd1cfc,
-        type: 3}
-      propertyPath: soundLibrary.Array.data[9].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 3547d6b61a28c7e468990f5fab966f72, type: 3}
-    - target: {fileID: 8414881835275790974, guid: a097b919c43f19b4db33494a34fd1cfc,
-        type: 3}
-      propertyPath: soundLibrary.Array.data[9].volume
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a097b919c43f19b4db33494a34fd1cfc, type: 3}
@@ -16457,6 +16432,24 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 578611380, guid: 34df89847986226499a64ad1d4c3b28a, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.10957861
+      objectReference: {fileID: 0}
+    - target: {fileID: 578611380, guid: 34df89847986226499a64ad1d4c3b28a, type: 3}
+      propertyPath: m_Size.x
+      value: 5.7674227
+      objectReference: {fileID: 0}
+    - target: {fileID: 2853984598322737842, guid: 34df89847986226499a64ad1d4c3b28a,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0.09657121
+      objectReference: {fileID: 0}
+    - target: {fileID: 2853984598322737842, guid: 34df89847986226499a64ad1d4c3b28a,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 7.9706206
+      objectReference: {fileID: 0}
     - target: {fileID: 4877935755477576034, guid: 34df89847986226499a64ad1d4c3b28a,
         type: 3}
       propertyPath: m_Layer
@@ -16496,24 +16489,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 578611380, guid: 34df89847986226499a64ad1d4c3b28a, type: 3}
-      propertyPath: m_Offset.x
-      value: 0.10957861
-      objectReference: {fileID: 0}
-    - target: {fileID: 578611380, guid: 34df89847986226499a64ad1d4c3b28a, type: 3}
-      propertyPath: m_Size.x
-      value: 5.7674227
-      objectReference: {fileID: 0}
-    - target: {fileID: 2853984598322737842, guid: 34df89847986226499a64ad1d4c3b28a,
-        type: 3}
-      propertyPath: m_Offset.x
-      value: 0.09657121
-      objectReference: {fileID: 0}
-    - target: {fileID: 2853984598322737842, guid: 34df89847986226499a64ad1d4c3b28a,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 7.9706206
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 34df89847986226499a64ad1d4c3b28a, type: 3}
