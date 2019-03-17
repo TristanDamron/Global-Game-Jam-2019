@@ -12,6 +12,7 @@ public class Collectible : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D c) {
         if (c.tag == "Player") {
+            FindObjectOfType<MemoryCounter>().CountMemories();
             Destroy(gameObject);
             DynamicAudioController.Play("sfx_memoryCollect");
         }

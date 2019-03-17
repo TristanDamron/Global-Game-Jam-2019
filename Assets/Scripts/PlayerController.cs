@@ -149,7 +149,8 @@ public class PlayerController : MonoBehaviour
         if (YoyoInput() && !yoyoing_ && !midAirShot) {
             // AudioController.PlayYoyo();
             DynamicAudioController.PlayYoyo();
-            LaunchYoyo(); 
+            LaunchYoyo();
+            FindObjectOfType<YoyoGauge>().yoyoOn = false;
             StartCoroutine(EndYoyo());
         } 
     }
@@ -158,6 +159,7 @@ public class PlayerController : MonoBehaviour
     {
         usedYoyoResets.Add(yoyoReset);
         midAirShot = false;
+        FindObjectOfType<YoyoGauge>().yoyoOn = true;
     }
 
     void Jump(float thrust_) {        
@@ -188,6 +190,9 @@ public class PlayerController : MonoBehaviour
             DynamicAudioController.Play("land");
             midAirShot = false;
             extraFallingGravity_ = 0.0f;
+            YoyoGauge yoyoGauge = FindObjectOfType<YoyoGauge>();
+            if (!yoyoGauge) return;
+            yoyoGauge.yoyoOn = true;
             foreach (YoyoReset reset in usedYoyoResets)
             {
                 reset.gameObject.SetActive(true);
@@ -201,6 +206,7 @@ public class PlayerController : MonoBehaviour
             // AudioController.PlaySpawn();         
             DynamicAudioController.Play("spawn");
             particles_.Play();
+            FireWallRespawn();  
         // checkpoint killzone
         } else if (c.gameObject.layer == LayerMask.NameToLayer("Deadzone2")) {
             if (yoyoUsed)
@@ -208,7 +214,8 @@ public class PlayerController : MonoBehaviour
             transform.position = checkpoint1_.position;
             // AudioController.PlaySpawn();
             DynamicAudioController.Play("spawn");
-            particles_.Play();
+            particles_.Play(); 
+            FireWallRespawn();
         }
         // checkpoint killzone
         else if (c.gameObject.layer == LayerMask.NameToLayer("Deadzone3"))
@@ -219,7 +226,15 @@ public class PlayerController : MonoBehaviour
             // AudioController.PlaySpawn();
             DynamicAudioController.Play("spawn");
             particles_.Play();
+            FireWallRespawn();
         }
+    }
+
+    void FireWallRespawn()
+    {
+        WallOfFire fireWall = FindObjectOfType<WallOfFire>();
+        if (!fireWall) return;
+        fireWall.RespawnWall();
     }
 
     void OnTriggerExit2D(Collider2D c) {
