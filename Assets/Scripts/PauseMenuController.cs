@@ -8,6 +8,9 @@ public class PauseMenuController : MonoBehaviour
 {
     public GameObject pauseMenu;
     public Button quit;
+    public Button mainMenu;
+    public string mainMenuName;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,8 +33,13 @@ public class PauseMenuController : MonoBehaviour
                 Time.timeScale = 1;
             }
         }
-        quit.onClick.AddListener(() => {
-            SceneManager.LoadScene("Main Menu");
+
+        mainMenu.onClick.AddListener(() => {
+            SceneManager.LoadScene(mainMenuName);
         });
+
+        quit.onClick.AddListener(() => {
+            Application.Quit();
+        }); 
     }
 }

@@ -4,23 +4,24 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class MainMenu : MonoBehaviour
+public class EndMenu : MonoBehaviour
 {
-    public Button startGame;
     public Button quit;
-    public string firstLevelName;
+    public Button mainMenu;
+    public string mainMenuName;
 
     // Start is called before the first frame update
     void Start()
     {
-    
-        startGame.onClick.AddListener(() => {
-            SceneManager.LoadScene(firstLevelName);
+
+        mainMenu.onClick.AddListener(() => {
+            SceneManager.LoadScene(mainMenuName);
         });
+
         quit.onClick.AddListener(() => {
             Application.Quit();
         });
-  
+
 
     }
 

@@ -136,7 +136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cushionDropTime: 0.3
   cushionDestroyTime: 6.1
-  cushionRespawnTime: 6
+  cushionRespawnTime: 5
 --- !u!50 &2263353215116850321
 Rigidbody2D:
   serializedVersion: 4

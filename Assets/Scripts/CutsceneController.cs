@@ -12,7 +12,10 @@ public class CutsceneController : MonoBehaviour
 
     void Start()
     {
-        parent_.Play("Cutscene");        
-        child_.Play("Walk");        
+        parent_.Play("Cutscene");
+        child_.Play("Walk");
     }
+
+
+
 }
