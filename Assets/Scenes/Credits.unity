@@ -1667,7 +1667,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ecf8ef50824a45adaa280403c76c357, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollVector: {x: 0, y: 50, z: 0}
+  scrollVector: {x: 0, y: 70, z: 0}
   scrollStopHeight: 2100
 --- !u!1001 &1760805481
 PrefabInstance:
