@@ -1667,8 +1667,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ecf8ef50824a45adaa280403c76c357, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollVector: {x: 0, y: 70, z: 0}
-  scrollStopHeight: 2100
+  scrollVector: {x: 0, y: 80, z: 0}
+  scrollStopHeight: 2300
 --- !u!1001 &1760805481
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1939,7 +1939,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: LITTLE BIG HOUSE
+  m_Text: LITTLE BIG HOME
 --- !u!222 &2023756332
 CanvasRenderer:
   m_ObjectHideFlags: 0

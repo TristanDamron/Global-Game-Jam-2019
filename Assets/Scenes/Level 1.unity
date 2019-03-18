@@ -423,11 +423,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1236914458375550074, guid: 46813698592c9d6469d161bdeff1ddac,
-        type: 3}
-      propertyPath: orthographic size
-      value: 11
-      objectReference: {fileID: 0}
     - target: {fileID: 1236914458375550075, guid: 46813698592c9d6469d161bdeff1ddac,
         type: 3}
       propertyPath: m_Enabled
@@ -437,6 +432,11 @@ PrefabInstance:
         type: 3}
       propertyPath: delay_
       value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1236914458375550074, guid: 46813698592c9d6469d161bdeff1ddac,
+        type: 3}
+      propertyPath: orthographic size
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46813698592c9d6469d161bdeff1ddac, type: 3}
