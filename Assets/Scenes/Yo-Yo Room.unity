@@ -222,7 +222,7 @@ PrefabInstance:
     - target: {fileID: 1236914458375550073, guid: 46813698592c9d6469d161bdeff1ddac,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -15.77
+      value: -8.7
       objectReference: {fileID: 0}
     - target: {fileID: 1236914458375550073, guid: 46813698592c9d6469d161bdeff1ddac,
         type: 3}
@@ -944,6 +944,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.138756
       objectReference: {fileID: 0}
+    - target: {fileID: 4547237879800692015, guid: 13b6c60c64436434a900d20fd53c98dd,
+        type: 3}
+      propertyPath: textboxesContents.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4547237879800692015, guid: 13b6c60c64436434a900d20fd53c98dd,
+        type: 3}
+      propertyPath: textboxesContents.Array.data[0]
+      value: 'Russel finds his childhood yo-yo, a tool to help navigate broken memories. '
+      objectReference: {fileID: 0}
     - target: {fileID: 4547237879800692012, guid: 13b6c60c64436434a900d20fd53c98dd,
         type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
@@ -973,16 +983,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Offset.x
       value: 2.923826
-      objectReference: {fileID: 0}
-    - target: {fileID: 4547237879800692015, guid: 13b6c60c64436434a900d20fd53c98dd,
-        type: 3}
-      propertyPath: textboxesContents.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4547237879800692015, guid: 13b6c60c64436434a900d20fd53c98dd,
-        type: 3}
-      propertyPath: textboxesContents.Array.data[0]
-      value: 'Russel finds his childhood yo-yo, a tool to help navigate broken memories. '
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13b6c60c64436434a900d20fd53c98dd, type: 3}
