@@ -14,7 +14,13 @@ public class PauseMenuController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        mainMenu.onClick.AddListener(() => {
+            SceneManager.LoadScene(mainMenuName);
+        });
+
+        quit.onClick.AddListener(() => {
+            Application.Quit();
+        });
     }
 
     // Update is called once per frame
@@ -34,12 +40,5 @@ public class PauseMenuController : MonoBehaviour
             }
         }
 
-        mainMenu.onClick.AddListener(() => {
-            SceneManager.LoadScene(mainMenuName);
-        });
-
-        quit.onClick.AddListener(() => {
-            Application.Quit();
-        }); 
     }
 }

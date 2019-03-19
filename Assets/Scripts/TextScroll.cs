@@ -7,7 +7,7 @@ public class TextScroll : MonoBehaviour
 {
     RectTransform rectTransform;
     public Vector3 scrollVector = Vector3.up * 35.0f;
-    [SerializeField] float scrollStopHeight = 1800f;
+    //[SerializeField] float scrollStopHeight = 1800f;
 
     // Start is called before the first frame update
     void Start()
@@ -20,9 +20,9 @@ public class TextScroll : MonoBehaviour
     {
         // this.rectTransform.y -= scrollRate * Time.deltaTime;
         this.transform.position += scrollVector * Time.deltaTime;
-        if(this.transform.position.y >= scrollStopHeight)
-        {
-            scrollVector = Vector3.up * 0f;
-        }
+        //if(this.transform.position.y >= scrollStopHeight)
+       //{
+        //    scrollVector = Vector3.up * 0f;
+        //}
     }
 }

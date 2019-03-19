@@ -19,7 +19,7 @@ public class WallOfFire : MonoBehaviour
     {
         wallXPos = transform.position.x;
         transform.position = new Vector3 (transform.position.x + (fireWallSpeed * Time.deltaTime), transform.position.y, transform.position.z);
-        if (wallXPos >= 115f)
+        if (wallXPos >= 113f)
         {
             gameObject.layer = 11;
         }

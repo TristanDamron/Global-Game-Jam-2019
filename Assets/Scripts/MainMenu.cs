@@ -13,14 +13,13 @@ public class MainMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-    
         startGame.onClick.AddListener(() => {
             SceneManager.LoadScene(firstLevelName);
         });
         quit.onClick.AddListener(() => {
             Application.Quit();
         });
-  
+       DestroyMemoryCounter();
 
     }
 
@@ -29,4 +28,13 @@ public class MainMenu : MonoBehaviour
     {
         
     }
+
+
+    void DestroyMemoryCounter()
+    {
+        var memoryCounter = FindObjectOfType<MemoryCounter>();
+        if (!memoryCounter) return;
+        Destroy(memoryCounter.gameObject);
+    }
+
 }
