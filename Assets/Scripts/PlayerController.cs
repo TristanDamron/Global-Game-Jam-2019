@@ -247,7 +247,9 @@ public class PlayerController : MonoBehaviour
     {
         if (!yoyo) return false;
         if (!yoyo.isActiveAndEnabled) return false;
-        return (Input.GetMouseButtonDown(0) || Input.GetAxisRaw("Yoyo") != 0f);
+        // TODO FIX CONTROLLER SUPPORT
+        // return (Input.GetMouseButtonDown(0) || Input.GetAxisRaw("Yoyo") != 0f);
+        return (Input.GetMouseButtonDown(0));
     }
 
     public void LaunchYoyo()

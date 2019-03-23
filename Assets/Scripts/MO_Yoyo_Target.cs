@@ -21,8 +21,7 @@ public class MO_Yoyo_Target : MonoBehaviour
         Vector3 goalPosition = transform.position;        
 
         // Only ray cast the mouse position if the joystick is not connected
-        // Debug.Log(Input.GetJoystickNames().Length);
-        if (Input.GetJoystickNames().Length == 0) {
+        // if (Input.GetJoystickNames().Length == 0) {
             Ray ray;            
             ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
@@ -30,9 +29,15 @@ public class MO_Yoyo_Target : MonoBehaviour
             float distance = 0;
             if (screenPlane.Raycast(ray, out distance))
                 goalPosition = ray.GetPoint(distance);
+            /*
         } else {
-            goalPosition = new Vector3(target_.position.x + Input.GetAxisRaw("Yoyo Aim Horizontal"), target_.position.y - Input.GetAxisRaw("Yoyo Aim Vertical"), target_.position.z);
+            // if joystick is connected... TODO BROKEN
+            goalPosition = new Vector3(
+                target_.position.x + Input.GetAxisRaw("Yoyo Aim Horizontal"),
+                target_.position.y - Input.GetAxisRaw("Yoyo Aim Vertical"),
+                target_.position.z);
         }
+        */
 
         goalPosition.z = 0.0f;
         Vector3 parentPosition = transform.parent.transform.position;
