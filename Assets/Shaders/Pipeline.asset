@@ -12,10 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf2edee5c58d82540a51f03df9d42094, type: 3}
   m_Name: Pipeline
   m_EditorClassIdentifier: 
-  k_AssetVersion: 4
+  k_AssetVersion: 5
+  k_AssetPreviousVersion: 5
+  m_RendererType: 1
+  m_RendererData: {fileID: 0}
+  m_RendererDataList:
+  - {fileID: 11400000, guid: ffcb35b258d2a496da0652a14274f61f, type: 2}
+  m_DefaultRendererIndex: 0
   m_RequireDepthTexture: 0
   m_RequireOpaqueTexture: 0
   m_OpaqueDownsampling: 1
+  m_SupportsTerrainHoles: 1
   m_SupportsHDR: 0
   m_MSAA: 4
   m_RenderScale: 1
@@ -33,12 +40,16 @@ MonoBehaviour:
   m_ShadowDepthBias: 1
   m_ShadowNormalBias: 1
   m_SoftShadowsSupported: 0
+  m_UseSRPBatcher: 1
   m_SupportsDynamicBatching: 1
   m_MixedLightingSupported: 1
+  m_DebugLevel: 0
+  m_PostProcessingFeatureSet: 0
+  m_ColorGradingMode: 0
+  m_ColorGradingLutSize: 32
   m_ShadowType: 1
   m_LocalShadowsSupported: 0
   m_LocalShadowsAtlasResolution: 256
   m_MaxPixelLights: 0
   m_ShadowAtlasResolution: 256
-  m_ResourcesAsset: {fileID: 11400000, guid: 00000000000000000000000000000000, type: 0}
   m_ShaderVariantLogLevel: 0
